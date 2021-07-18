@@ -8,16 +8,15 @@ import android.view.View;
 
 import com.nallis.clubanimals.R;
 
-public class RegistroaActivity extends AppCompatActivity {
+public class RegistroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registroa);
     }
-    // metodo para enviar a la activity Ingresar
-    public void Ingresar (View view){
-        Intent ingresar = new Intent(this, MainActivity.class);
-        startActivity(ingresar);
+    public void goToIngresar(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
