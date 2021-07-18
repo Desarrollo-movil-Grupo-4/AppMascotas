@@ -51,7 +51,7 @@
             <Button
                 android:id="@+id/btn_perfil_guardar"
                 android:layout_width="wrap_content"
-                android:layout_height="20"
+                android:layout_height="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/boton_redondo"
                 android:onClick="goToIngresar"
@@ -84,13 +84,16 @@
                 android:id="@+id/tv_perfil_correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_perfil_correo" />
+                android:text="@string/tv_perfil_correo"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/etxt_correo"
+                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:padding="10dp"
                 android:hint="@string/etxt_correo"
                 android:inputType="textEmailAddress" />
         </LinearLayout>
@@ -104,13 +107,16 @@
                 android:id="@+id/tv_perfil_contrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_perfil_contrasena" />
+                android:text="@string/tv_perfil_contrasena"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/etxt_contrasena"
+                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:padding="10dp"
                 android:hint="@string/etxt_contrasena"
                 android:inputType="textPassword" />
         </LinearLayout>
@@ -124,13 +130,16 @@
                 android:id="@+id/tv_perfil_telefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_perfil_telefono" />
+                android:text="@string/tv_perfil_telefono"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/etxt_telefono"
+                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:padding="10dp"
                 android:hint="@string/etxt_telefono"
                 android:inputType="phone" />
         </LinearLayout>
@@ -144,13 +153,16 @@
                 android:id="@+id/tv_perfil_localizacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_perfil_localizacion" />
+                android:text="@string/tv_perfil_localizacion"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/etxt_localizacion"
+                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:padding="10dp"
                 android:hint="@string/etxt_localizacion"
                 android:inputType="textPostalAddress" />
         </LinearLayout>
@@ -166,7 +178,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/tv_perfil_mascota" />
+                android:text="@string/tv_perfil_mascota"
+                android:textSize="24sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btn_agregar"
@@ -205,16 +218,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/txt_nombre_mascota" />
+                        android:text="@string/txt_nombre_mascota"
+                        android:textColor="@android:color/black" />
 
                     <EditText
                         android:id="@+id/etxt_nombre_mascota"
+                        android:background="@drawable/text_redondo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:padding="10dp"
+                        android:hint="@string/etxt_nombre_mascota"
                         android:inputType="textPersonName"
-                        android:text="@string/etxt_nombre_mascota" />
+                        android:textColorHint="@android:color/darker_gray" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -227,15 +244,18 @@
                     android:id="@+id/tv_tipo_mascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_tipo_mascota" />
+                    android:text="@string/tv_tipo_mascota"
+                    android:textColor="@android:color/black" />
 
                 <EditText
                     android:id="@+id/etxt_tipo_mascota"
+                    android:background="@drawable/text_redondo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="@string/etxt_tipo_mascota" />
+                    android:padding="10dp"
+                    android:hint="@string/etxt_tipo_mascota"
+                    android:inputType="textPersonName" />
             </LinearLayout>
 
             <LinearLayout
@@ -247,13 +267,16 @@
                     android:id="@+id/tv_edad_mascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_edad_mascota" />
+                    android:text="@string/tv_edad_mascota"
+                    android:textColor="@android:color/black" />
 
                 <EditText
                     android:id="@+id/etxt_edad"
+                    android:background="@drawable/text_redondo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:padding="10dp"
                     android:hint="@string/etxt_edad"
                     android:inputType="time" />
             </LinearLayout>
