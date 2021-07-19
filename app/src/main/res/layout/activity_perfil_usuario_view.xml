@@ -33,7 +33,7 @@
                 android:ellipsize="none"
                 android:onClick="goToIngresar"
                 android:padding="0dp"
-                android:text="Cancelar"
+                android:text="@string/btn_cancelar"
                 android:textSize="8sp"
                 app:backgroundTint="#FF3D00" />
 
@@ -60,7 +60,7 @@
                 android:paddingTop="0dp"
                 android:paddingRight="0dp"
                 android:paddingBottom="0dp"
-                android:text="Guardar"
+                android:text="@string/btn_perfil_guardar"
                 android:textSize="8sp"
                 app:backgroundTint="#69CF13" />
         </LinearLayout>
@@ -78,6 +78,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -89,18 +90,19 @@
 
             <EditText
                 android:id="@+id/etxt_correo"
-                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/text_redondo"
                 android:ems="10"
-                android:padding="10dp"
                 android:hint="@string/etxt_correo"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -112,18 +114,19 @@
 
             <EditText
                 android:id="@+id/etxt_contrasena"
-                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/text_redondo"
                 android:ems="10"
-                android:padding="10dp"
                 android:hint="@string/etxt_contrasena"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:padding="10dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -135,18 +138,19 @@
 
             <EditText
                 android:id="@+id/etxt_telefono"
-                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/text_redondo"
                 android:ems="10"
-                android:padding="10dp"
                 android:hint="@string/etxt_telefono"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:padding="10dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -158,18 +162,19 @@
 
             <EditText
                 android:id="@+id/etxt_localizacion"
-                android:background="@drawable/text_redondo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/text_redondo"
                 android:ems="10"
-                android:padding="10dp"
                 android:hint="@string/etxt_localizacion"
-                android:inputType="textPostalAddress" />
+                android:inputType="textPostalAddress"
+                android:padding="10dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -193,11 +198,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -223,14 +230,14 @@
 
                     <EditText
                         android:id="@+id/etxt_nombre_mascota"
-                        android:background="@drawable/text_redondo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/text_redondo"
                         android:ems="10"
-                        android:padding="10dp"
                         android:hint="@string/etxt_nombre_mascota"
                         android:inputType="textPersonName"
+                        android:padding="10dp"
                         android:textColorHint="@android:color/darker_gray" />
                 </LinearLayout>
             </LinearLayout>
@@ -238,6 +245,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -249,18 +257,19 @@
 
                 <EditText
                     android:id="@+id/etxt_tipo_mascota"
-                    android:background="@drawable/text_redondo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/text_redondo"
                     android:ems="10"
-                    android:padding="10dp"
                     android:hint="@string/etxt_tipo_mascota"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:padding="10dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -272,13 +281,13 @@
 
                 <EditText
                     android:id="@+id/etxt_edad"
-                    android:background="@drawable/text_redondo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/text_redondo"
                     android:ems="10"
-                    android:padding="10dp"
                     android:hint="@string/etxt_edad"
-                    android:inputType="time" />
+                    android:inputType="time"
+                    android:padding="10dp" />
             </LinearLayout>
 
         </LinearLayout>

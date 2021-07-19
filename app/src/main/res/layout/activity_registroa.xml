@@ -122,7 +122,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/boton_redondo"
-                android:shadowRadius="10dp"
                 android:text="@string/btn_google"
                 android:textColor="@color/white"
                 app:backgroundTint="#FF3D00" />
