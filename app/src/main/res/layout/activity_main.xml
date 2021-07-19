@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/fredo_y_max" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/nom_mascotas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -60,7 +60,7 @@
         app:backgroundTint="#17B556" />
 
     <TextView
-        android:id="@+id/enlace_registro"
+        android:id="@+id/nom_vet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
