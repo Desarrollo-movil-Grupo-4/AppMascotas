@@ -15,8 +15,9 @@ public class ContratarActivityView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contratar_view);
     }
+    /*
     public void goToCalculadora(View view) {
         Intent intent = new Intent( this, OlvideContrasena.class);
         startActivity(intent);
-    }
+    }*/
 }

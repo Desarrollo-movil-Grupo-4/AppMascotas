@@ -15,8 +15,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    /*
     public void goToRegistro (View view){
         Intent intent = new Intent(this, RegistroActivity.class);
         startActivity(intent);
     }
+
+    public void goToRegistro (View view){
+        Intent intent = new Intent(this, ContratarActivityView.class);
+        startActivity(intent);
+    }
+     /*
+    public void goToContrasena(View view) {
+        Intent intent = new Intent( this, OlvideContrasena.class);
+        startActivity(intent);
+    }*/
 }

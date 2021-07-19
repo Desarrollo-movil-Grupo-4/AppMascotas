@@ -9,6 +9,17 @@
     android:padding="10dp"
     tools:context=".views.MainActivity">
 
+    <TextView
+        android:id="@+id/nom_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center|center_horizontal"
+        android:text="Club Animals"
+        android:textColor="#017F8D"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="123dp"
@@ -16,7 +27,6 @@
         android:layout_alignParentTop="false"
         android:layout_centerInParent="true"
         android:layout_gravity="center|center_vertical"
-        android:layout_marginTop="70dp"
         app:srcCompat="@drawable/fredo_y_max" />
 
     <EditText
