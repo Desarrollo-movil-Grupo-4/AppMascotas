@@ -19,4 +19,9 @@ public class RegistroActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    public void goToContratar (View view){
+        Intent intent = new Intent(this, ContratarActivityView.class);
+        startActivity(intent);
+
+    }
 }

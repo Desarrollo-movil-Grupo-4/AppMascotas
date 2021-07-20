@@ -15,8 +15,8 @@ public class PerfilUsuarioView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario_view);
     }
-    public void goToIngresar(View view){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void goToInicio(View view){
+        Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
     }
 }

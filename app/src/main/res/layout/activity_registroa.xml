@@ -91,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/boton_redondo"
+            android:onClick="goToContratar"
             android:text="@string/btn_registrarse"
             android:textColor="@color/white"
             app:backgroundTint="#69CF13" />
@@ -112,7 +113,8 @@
                 android:background="@drawable/boton_redondo"
 
                 android:text="@string/btn_facebook"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                app:backgroundTint="#3D56E4" />
 
             <Button
                 android:id="@+id/btn_google"
