@@ -10,4 +10,23 @@
     <string name="btn_google">Ingresar con Google</string>
     <string name="tv_pregunta">Ya está registrado?</string>
     <string name="tv_ingresar">Ingresar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_perfil_guardar">Guardar</string>
+    <string name="txt_perfil_nombre">Nombre</string>
+    <string name="tv_perfil_correo">Correo</string>
+    <string name="etxt_correo">ejemplo@ejemplo.com</string>
+    <string name="tv_perfil_contrasena">Contraseña</string>
+    <string name="etxt_contrasena">********</string>
+    <string name="tv_perfil_telefono">Teléfono</string>
+    <string name="etxt_telefono">312 000-0000</string>
+    <string name="tv_perfil_localizacion">Localización</string>
+    <string name="etxt_localizacion">Medellín</string>
+    <string name="tv_perfil_mascota">Mis Mascotas</string>
+    <string name="txt_nombre_mascota">Nombre</string>
+    <string name="etxt_nombre_mascota">Nombre mascota</string>
+    <string name="tv_tipo_mascota">Tipo</string>
+    <string name="etxt_tipo_mascota">Perro</string>
+    <string name="tv_edad_mascota">Edad</string>
+    <string name="etxt_edad">0 años</string>
+
 </resources>

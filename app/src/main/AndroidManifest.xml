@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClubAnimals">
-        <activity android:name=".views.RegistroActivity"></activity>
+
+        <activity android:name=".views.PerfilUsuarioView"></activity>
+        <activity android:name=".views.RegistroActivity" />
+       
 
         <activity android:name=".views.MainActivity">
             <intent-filter>
