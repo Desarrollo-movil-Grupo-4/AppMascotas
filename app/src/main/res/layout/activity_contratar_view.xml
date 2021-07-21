@@ -10,12 +10,13 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="195dp"
-            android:layout_height="171dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_margin="10dp"
             app:srcCompat="@drawable/fredo_y_max"
             tools:layout_editor_absoluteX="16dp"
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/border_radius"
         android:ems="10"
         android:fontFamily="sans-serif-light"
@@ -65,9 +66,8 @@
     <EditText
         android:id="@+id/nom_mascotas"
         android:layout_width="wrap_content"
-        android:layout_height="264dp"
+        android:layout_height="182dp"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:ems="10"
         android:fontFamily="sans-serif-light"
@@ -89,4 +89,60 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:backgroundTint="#17B556" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableLeft="@drawable/map_marker_radius"
+            android:gravity="center|start"
+            android:text="Calle siempre viva"
+            android:textColor="#009688"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:drawableTint="#009688" />
+
+        <TextView
+            android:id="@+id/telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableLeft="@drawable/phone_in_talk"
+            android:gravity="center|start"
+            android:text="5555555"
+            android:textColor="#009688"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:drawableTint="#009688" />
+
+        <TextView
+            android:id="@+id/telefono2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:drawableLeft="@drawable/at"
+            android:gravity="center|start"
+            android:text="correo@correo.com"
+            android:textColor="#009688"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:drawableTint="#009688" />
+    </LinearLayout>
 </LinearLayout>
