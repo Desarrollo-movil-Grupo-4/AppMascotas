@@ -32,4 +32,7 @@
     <string name="etxt_email">ejemplo@ejemplo.com</string>
     <string name="btn_recuperar">Recuperar contraseña</string>
     <string name="etxt_mensaje">Se envió un email a su correo con la información para restituir la contraseña.</string>
+    <string name="veterinaria">Nombre Veterinaria</string>
+    <string name="secondary_text">Dirección veterinaria</string>
+    <string name="supporting_text">Servicio contratado</string>
 </resources>
