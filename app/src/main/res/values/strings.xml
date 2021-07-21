@@ -28,5 +28,8 @@
     <string name="etxt_tipo_mascota">Perro</string>
     <string name="tv_edad_mascota">Edad</string>
     <string name="etxt_edad">0 años</string>
-
+    <string name="txt_email">Correo</string>
+    <string name="etxt_email">ejemplo@ejemplo.com</string>
+    <string name="btn_recuperar">Recuperar contraseña</string>
+    <string name="etxt_mensaje">Se envió un email a su correo con la información para restituir la contraseña.</string>
 </resources>
