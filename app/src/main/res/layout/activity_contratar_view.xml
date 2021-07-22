@@ -22,7 +22,6 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_margin="10dp"
-            android:onClick="goToPerfil"
             app:srcCompat="@drawable/fredo_y_max"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="53dp" />

@@ -20,8 +20,4 @@ public class ContratarActivityView extends AppCompatActivity {
         Intent intent = new Intent( this, ResumenContratarView.class);
         startActivity(intent);
     }
-    public void goToPerfil(View view) {
-        Intent intent = new Intent( this, PerfilUsuarioView.class);
-        startActivity(intent);
-    }
 }
