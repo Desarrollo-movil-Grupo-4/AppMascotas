@@ -35,4 +35,9 @@
     <string name="veterinaria">Nombre Veterinaria</string>
     <string name="secondary_text">Dirección veterinaria</string>
     <string name="supporting_text">Servicio contratado</string>
+    <string name="mascota_text">Tipo mascota y nombre</string>
+    <string name="action_1">Finalizar transacción</string>
+    <string name="action_2">Cerrar</string>
+    <string name="tv_titulo_confirmacion">Enhorabuena, Nombre!</string>
+    <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada satisfactoriamente</string>
 </resources>
