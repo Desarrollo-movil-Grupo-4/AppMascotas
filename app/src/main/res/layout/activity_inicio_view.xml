@@ -10,18 +10,18 @@
     tools:context=".views.InicioActivityView">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="219dp"
+        android:id="@+id/nomPerfil"
+        android:layout_width="301dp"
         android:layout_height="49dp"
+        android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:drawableLeft="@drawable/cat"
         android:gravity="center|left"
         android:onClick="goToPerfil"
-        android:text="Veterinaria PetPlus"
+        android:paddingLeft="25dp"
+        android:text="Pepito Perez"
         android:textColor="#009688"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -30,10 +30,11 @@
         tools:layout_editor_absoluteY="60dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/buscar"
         android:layout_width="294dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
         android:width="50dp"
         android:height="50dp"
         android:background="@drawable/border_radius"
@@ -54,13 +55,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Clinica general"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <Button
@@ -73,13 +75,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Odontología"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <EditText
@@ -92,13 +95,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Cirugía"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <EditText
@@ -111,13 +115,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Rayos X"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <EditText
@@ -130,13 +135,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Baños y Peluquería"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <EditText
@@ -149,13 +155,14 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
+        android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Guarderia"
         android:textColor="#009688"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#4A009688"
+        app:backgroundTint="#E84CAF50"
         app:drawableTint="#009688" />
 
     <LinearLayout

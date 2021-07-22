@@ -18,12 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_atras"
+            android:id="@+id/btnAtrasdos"
             android:layout_width="57dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
+            android:background="@color/white"
             android:onClick="goToIngresar"
-            app:backgroundTint="@android:color/transparent"
+            app:backgroundTint="@color/white"
             app:icon="?attr/actionModeCloseDrawable"
             app:iconPadding="0dp"
             app:iconTint="#017F8D" />

@@ -5,12 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6110C0E7"
+    android:onClick="goToContratar"
     tools:context=".views.ResumenContratarView">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:onClick="goToContratar"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="320dp">
 
         <TextView
             android:id="@+id/tv_titulo_confirmacion"
@@ -20,6 +24,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
             android:text="@string/tv_titulo_confirmacion"
+            android:textColor="#009688"
             android:textSize="30sp" />
 
         <TextView
@@ -30,21 +35,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:text="@string/tv_mensaje_confirmacion"
+            android:textColor="#009688"
             android:textSize="20sp" />
-    </LinearLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
+            android:background="@color/white"
             android:orientation="vertical">
 
             <!-- Media -->
@@ -55,9 +52,11 @@
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/perro" />
 
+            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="202dp"
+                android:layout_margin="20dp"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -67,7 +66,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/veterinaria"
-                    android:textAppearance="?attr/textAppearanceHeadline6" />
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/secondary_text"
@@ -76,7 +76,8 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/secondary_text"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/supporting_text"
@@ -85,7 +86,8 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/supporting_text"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/mascota_text"
@@ -94,11 +96,11 @@
                     android:layout_marginTop="16dp"
                     android:text="@string/mascota_text"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
-            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -111,17 +113,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="@string/action_1" />
+                    android:onClick="goToInicio"
+                    android:text="@string/action_1"
+                    android:textColor="#009688"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/action_2"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/action_2" />
+                    android:onClick="goToInicio"
+                    android:text="@string/action_2"
+                    android:textColor="#009688"
+                    android:textColorHighlight="#009688"
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAtrasdos"
+            android:layout_width="57dp"
+            android:layout_height="41dp"
+            android:layout_margin="30dp"
+            android:onClick="goToContratar"
+            app:backgroundTint="@color/white"
+            app:icon="?attr/actionModeCloseDrawable"
+            app:iconPadding="0dp"
+            app:iconTint="#017F8D" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.card.MaterialCardView>
 

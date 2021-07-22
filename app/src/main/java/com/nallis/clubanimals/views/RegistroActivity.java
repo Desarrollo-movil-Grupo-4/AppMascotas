@@ -19,9 +19,8 @@ public class RegistroActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void goToInicio (View view){
+    public void goToInicio (View view) {
         Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
-
     }
 }

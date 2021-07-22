@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center|center_horizontal"
-        android:onClick="goToInicio"
+        android:onClick="goToContrasena"
         android:text="@string/text_contraseña"
         android:textColor="#017F8D"
         android:textSize="24sp" />

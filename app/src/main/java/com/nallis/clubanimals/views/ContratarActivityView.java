@@ -15,9 +15,13 @@ public class ContratarActivityView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contratar_view);
     }
-    /*llevar a whatsapp*/
-    public void goToInicio(View view) {
-        Intent intent = new Intent( this, InicioActivityView.class);
+    /*llevar a resumen de contratacion*/
+    public void goToResummen(View view) {
+        Intent intent = new Intent( this, ResumenContratarView.class);
+        startActivity(intent);
+    }
+    public void goToPerfil(View view) {
+        Intent intent = new Intent( this, PerfilUsuarioView.class);
         startActivity(intent);
     }
 }
