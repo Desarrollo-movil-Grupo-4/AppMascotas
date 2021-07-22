@@ -16,7 +16,7 @@ public class ContratarActivityView extends AppCompatActivity {
         setContentView(R.layout.activity_contratar_view);
     }
     /*llevar a whatsapp*/
-    public void goToCalculadora(View view) {
+    public void goToInicio(View view) {
         Intent intent = new Intent( this, InicioActivityView.class);
         startActivity(intent);
     }

@@ -40,4 +40,20 @@
     <string name="action_2">Cerrar</string>
     <string name="tv_titulo_confirmacion">Enhorabuena, Nombre!</string>
     <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada satisfactoriamente</string>
+    //string de contratar
+    <string name="text_nom_vet">Nombre de la veterinaria</string>
+    <string name="text_nombre">Tu Nombre</string>
+    <string name="text_tipo_mascota">Tipo de mascota</string>
+    <string name="text_mensaje">Dejanos tu mensaje</string>
+    <string name="text_enviar">Enviar</string>
+    <string name="text_direccion">Calle siempre viva</string>
+    <string name="num_telefono">5555555</string>
+    <string name="text_correo">correo@correo.com</string>
+    //string de login
+    <string name="text_app">Club Animals</string>
+    <string name="text_email">Email</string>
+    <string name="num_password">Password</string>
+    <string name="text_entrar">Entrar</string>
+    <string name="text_resgistro">¿Si aun no estas resgistrado? Registrarme</string>
+    <string name="text_contraseña">Olvide mi contraseña</string>
 </resources>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.GeolocationPermissions;
 
 import com.nallis.clubanimals.R;
 
@@ -20,8 +21,8 @@ public class InicioActivityView extends AppCompatActivity {
         Intent intent = new Intent(this, PerfilUsuarioView.class);
         startActivity(intent);
     }
-    public void goToVeterinaria(View view){
-        Intent intent = new Intent(this, PerfilUsuarioView.class);
+    public void goToGeolocalizacion(View view){
+        Intent intent = new Intent(this, GeolocationPermissions.class);
         startActivity(intent);
     }
 }
