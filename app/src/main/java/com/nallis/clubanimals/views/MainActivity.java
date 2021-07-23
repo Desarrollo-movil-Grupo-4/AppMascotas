@@ -1,14 +1,16 @@
 package com.nallis.clubanimals.views;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.nallis.clubanimals.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,17 @@ public class MainActivity extends AppCompatActivity {
 /*
     public void goToRegistro (View view){
         Intent intent = new Intent(this, ContratarActivityView.class);
+
+    public void goToRegistro(View view){
+        Intent intent = new Intent(this, RegistroActivity.class);
         startActivity(intent);
     }
-     /*
-    public void goToContrasena(View view) {
-        Intent intent = new Intent( this, OlvideContrasena.class);
+    public void goToInicio(View view){
+        Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
-    }*/
+    }
+    public void goToContrasena(View view){
+        Intent intent = new Intent(this, RecuperarContrasenaView.class);
+        startActivity(intent);
+    }
 }

@@ -4,20 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
+import android.widget.TextView;
 
 import com.nallis.clubanimals.R;
 
-public class ContratarActivityView extends AppCompatActivity {
+public class RecuperarContrasenaView extends AppCompatActivity {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contratar_view);
+        setContentView(R.layout.activity_recuperar_contrasena_view);
     }
-    /*llevar a resumen de contratacion*/
-    public void goToResummen(View view) {
-        Intent intent = new Intent( this, ResumenContratarView.class);
+    public void goToIngresar(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }

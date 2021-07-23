@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="#6110C0E7"
     android:orientation="vertical"
     android:padding="10dp"
+
     tools:context=".views.MainActivity">
 
     <TextView
-        android:id="@+id/nom_app"
+        android:id="@+id/nomApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginTop="60dp"
         android:gravity="center|center_horizontal"
-        android:text="Club Animals"
+        android:text="@string/text_app"
         android:textColor="#017F8D"
         android:textSize="34sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imaView"
         android:layout_width="123dp"
         android:layout_height="160dp"
         android:layout_alignParentTop="false"
         android:layout_centerInParent="true"
         android:layout_gravity="center|center_vertical"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/fredo_y_max" />
 
     <EditText
-        android:id="@+id/nom_mascotas"
+        android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,10 +41,11 @@
         android:background="@drawable/border_radius"
         android:ems="10"
         android:fontFamily="sans-serif-light"
-        android:hint="Email"
+        android:hint="@string/text_email"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="24sp" />
+
 
     <EditText
         android:id="@+id/Password"
@@ -51,42 +55,47 @@
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/num_password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/buttonLogin"
         android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:layout_margin="20dp"
         android:background="@drawable/buttom_round"
+        android:onClick="goToInicio"
         android:padding="8dp"
-        android:text="Entrar"
+        android:text="@string/text_entrar"
         android:textSize="24sp"
         android:textStyle="bold"
         app:backgroundTint="#17B556" />
 
     <TextView
-        android:id="@+id/nom_vet"
+        android:id="@+id/nomVet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
         android:onClick="goToVeterinaria"
         android:text="¿Si aun no estas resgistrado? Registrarme"
+        android:onClick="goToRegistro"
+        android:text="@string/text_resgistro"
         android:textColor="#017F8D"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/enlace_recu_contra"
+        android:id="@+id/enlaceRecuContra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center|center_horizontal"
-        android:text="Olvide mi contraseña"
+        android:onClick="goToContrasena"
+        android:text="@string/text_contraseña"
         android:textColor="#017F8D"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
+
 
 </LinearLayout>

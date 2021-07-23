@@ -8,16 +8,15 @@ import android.view.View;
 
 import com.nallis.clubanimals.R;
 
-public class ContratarActivityView extends AppCompatActivity {
+public class PerfilUsuarioView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contratar_view);
+        setContentView(R.layout.activity_perfil_usuario_view);
     }
-    /*llevar a resumen de contratacion*/
-    public void goToResummen(View view) {
-        Intent intent = new Intent( this, ResumenContratarView.class);
+    public void goToInicio(View view){
+        Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
     }
 }
