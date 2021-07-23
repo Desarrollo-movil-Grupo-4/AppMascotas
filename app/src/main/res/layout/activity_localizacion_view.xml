@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="91dp"
-        android:gravity="left">
+        >
 
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_marginLeft="23dp"
             android:layout_toEndOf="@+id/button7"
             android:layout_toRightOf="@+id/button7"
-            android:gravity="center"
+            android:onClick="goToPerfil"
             android:text="Cuenta USuario"
             android:textColor="#009688"
             android:textSize="24sp"
@@ -66,7 +66,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="541dp"
+        android:layout_height="539dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical">
@@ -99,6 +99,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="false"
             android:layout_marginTop="18dp"
+            android:onClick="goToContratar"
             android:src="@drawable/loc" />
 
     </RelativeLayout>
@@ -106,7 +107,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="left"
         android:orientation="horizontal"
         android:textColor="#009688"
         android:textSize="24sp"
@@ -124,7 +124,6 @@
             android:layout_marginTop="15dp"
             android:textAllCaps="false"
             android:textColor="#008692"
-            android:textIsSelectable="true"
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/home_import_outline"
             app:iconPadding="2dp"

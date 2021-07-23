@@ -56,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/boton_redondo"
+            android:onClick="goToIngresar"
             android:text="@string/btn_recuperar"
             app:backgroundTint="#017F8D" />
 

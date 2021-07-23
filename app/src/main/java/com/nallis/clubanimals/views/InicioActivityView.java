@@ -21,12 +21,12 @@ public class InicioActivityView extends AppCompatActivity {
         Intent intent = new Intent(this, PerfilUsuarioView.class);
         startActivity(intent);
     }
-    public void goToGeolocalizacion(View view){
-        Intent intent = new Intent(this, GeolocationPermissions.class);
-        startActivity(intent);
-    }
     public void goToContratar(View view){
         Intent intent = new Intent(this, ContratarActivityView.class);
+        startActivity(intent);
+    }
+    public void goToLocalizacion(View view){
+        Intent intent = new Intent(this, LocalizacionActivityView.class);
         startActivity(intent);
     }
 }
