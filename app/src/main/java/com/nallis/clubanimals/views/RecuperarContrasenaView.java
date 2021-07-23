@@ -13,8 +13,6 @@ import com.nallis.clubanimals.R;
 public class RecuperarContrasenaView extends AppCompatActivity {
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

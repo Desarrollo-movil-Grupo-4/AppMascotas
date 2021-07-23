@@ -15,7 +15,7 @@ public class LocalizacionActivityView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacion_view);
     }
-    public void goToTienda (View view){
+    public void goToVeterinaria (View view){
         Intent intent = new Intent(this, VeterinariaActivity.class);
         startActivity(intent);
     }

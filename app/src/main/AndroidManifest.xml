@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClubAnimals">
 
-        <activity android:name=".views.LocalizacionActivityView"></activity>
-        <activity android:name=".views.VeterinariaActivity"></activity>
-        <activity android:name=".views.ContratarActivityView" />
-        <activity android:name=".views.ResumenContratarView"></activity>
+        <activity android:name=".views.LocalizacionActivityView"/>
+        <activity android:name=".views.VeterinariaActivity"/>
+        <activity android:name=".views.ContratarActivityView"/>
+        <activity android:name=".views.ResumenContratarView"/>
         <activity android:name=".views.RecuperarContrasenaView" />
         <activity android:name=".views.PerfilUsuarioView" />
         <activity android:name=".views.RegistroActivity" />
