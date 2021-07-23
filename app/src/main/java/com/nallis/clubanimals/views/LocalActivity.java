@@ -10,16 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nallis.clubanimals.R;
 
-public class Localizacion_ActividadView extends AppCompatActivity {
+public class LocalActivity extends AppCompatActivity {
 
     private Spinner spinner1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_localizacion_actividad);
+        setContentView(R.layout.activity_local_view);
 
         spinner1 = (Spinner)findViewById(R.id.spinner);
 
