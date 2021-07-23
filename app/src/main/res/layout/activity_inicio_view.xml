@@ -58,12 +58,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Clinica general"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <Button
         android:id="@+id/odontologia"
@@ -78,12 +78,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Odontología"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <EditText
         android:id="@+id/cirugia"
@@ -98,12 +98,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Cirugía"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <EditText
         android:id="@+id/rayos"
@@ -118,12 +118,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Rayos X"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <EditText
         android:id="@+id/banos"
@@ -138,12 +138,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Baños y Peluquería"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <EditText
         android:id="@+id/guarderia"
@@ -158,12 +158,12 @@
         android:onClick="goToContratar"
         android:paddingRight="30dp"
         android:text="Guarderia"
-        android:textColor="#009688"
+        android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#E84CAF50"
-        app:drawableTint="#009688" />
+        app:backgroundTint="#009688"
+        app:drawableTint="@color/white" />
 
     <LinearLayout
         android:layout_width="wrap_content"
