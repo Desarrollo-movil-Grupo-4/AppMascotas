@@ -79,6 +79,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
+        android:onClick="goToVeterinaria"
+        android:text="¿Si aun no estas resgistrado? Registrarme"
         android:onClick="goToRegistro"
         android:text="@string/text_resgistro"
         android:textColor="#017F8D"
