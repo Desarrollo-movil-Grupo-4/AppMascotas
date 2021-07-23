@@ -1,93 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A8E6F8"
-    tools:context=".views.LocalizacionActivityView">
+    android:background="#6110C0E7"
+    android:orientation="vertical"
+    tools:context=".views.InicioActivityView">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginBottom="10dp"
-        android:background="#00899E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_map" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:gravity="left">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginBottom="48dp"
-        android:background="#1C88A0"
-        android:tint="#E8E8E8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="10dp"
-        android:background="#2A87A3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="185dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="23dp"
+            android:layout_marginLeft="23dp"
+            android:layout_toEndOf="@+id/button7"
+            android:layout_toRightOf="@+id/button7"
+            android:gravity="center"
+            android:text="Cuenta USuario"
+            android:textColor="#009688"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="111dp"
+            tools:layout_editor_absoluteY="60dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="256dp"
-        android:layout_marginLeft="256dp"
-        android:layout_marginBottom="10dp"
-        android:background="#2A87A3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/menu"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="336dp"
-        android:layout_marginLeft="256dp"
-        android:layout_marginBottom="10dp"
-        android:background="#2A87A3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/account_supervisor_circle_outline"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="662dp" />
+    </RelativeLayout>
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginBottom="184dp"
-        android:isIndicator="false"
-        android:numStars="5"
-        android:rating="4.5"
-        android:stepSize="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="541dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/menu_button"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="-295dp"
+            android:text="@string/show_menu" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="71dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="347dp"
+            android:layout_height="201dp"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/loc" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:textColor="#009688"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/home_import_outline"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/button2"
+            android:layout_toRightOf="@+id/button2"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/map_marker_multiple__1_"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/button4"
+            android:layout_toRightOf="@+id/button4"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/logout"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/button3"
+            android:layout_toRightOf="@+id/button3"
+            android:textAllCaps="false"
+            android:textColor="#008692"
+            android:textIsSelectable="true"
+            app:backgroundTint="#A8E6F8"
+            app:icon="@drawable/paw"
+            app:iconPadding="2dp"
+            app:iconTint="#008187" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
