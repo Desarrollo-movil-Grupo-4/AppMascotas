@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4210C0E7"
+    tools:context=".views.RecuperarContrasenaView">
+
+    <LinearLayout
+        android:layout_width="334dp"
+        android:layout_height="692dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnAtrasdos"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:background="@color/white"
+            android:onClick="goToIngresar"
+            app:backgroundTint="@color/white"
+            app:icon="?attr/actionModeCloseDrawable"
+            app:iconPadding="0dp"
+            app:iconTint="#017F8D" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/txt_email"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etxt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_redondo"
+            android:ems="10"
+            android:hint="@string/etxt_email"
+            android:inputType="textEmailAddress"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_recuperar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/boton_redondo"
+            android:text="@string/btn_recuperar"
+            app:backgroundTint="#017F8D" />
+
+        <EditText
+            android:id="@+id/etxt_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@string/etxt_mensaje"
+            android:textColor="@color/teal_700" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
