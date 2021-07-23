@@ -77,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
             android:layout_marginTop="-295dp"
-            android:text="@string/show_menu" />
+            android:text="servicios"
+            app:backgroundTint="#348CA4B9" />
 
         <RatingBar
             android:id="@+id/ratingBar"
