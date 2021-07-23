@@ -15,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    /*
-    public void goToRegistro (View view){
-        Intent intent = new Intent(this, RegistroActivity.class);
+
+    public void goToVeterinaria (View view){
+        Intent intent = new Intent(this, VeterinariaActivity.class);
         startActivity(intent);
     }
-
+/*
     public void goToRegistro (View view){
         Intent intent = new Intent(this, ContratarActivityView.class);
         startActivity(intent);
