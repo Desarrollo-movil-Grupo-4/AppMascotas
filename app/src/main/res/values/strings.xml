@@ -56,4 +56,8 @@
     <string name="text_entrar">Entrar</string>
     <string name="text_resgistro">¿Si aun no estas resgistrado? Registrarme</string>
     <string name="text_contraseña">Olvide mi contraseña</string>
+    //string localizacion de un servicio
+    <string name="Descservubicacion">Encuentra tu veterinaria más cercana de acuerdo con tu ubicacion</string>
+    <string name="nomservicio">SERVICIO</string>
+    <string name="sertovet">IR</string>
 </resources>
