@@ -75,7 +75,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:onClick="goToLocalizacion"
+        android:onClick="goToActivlocal"
         android:paddingRight="30dp"
         android:text="Odontología"
         android:textColor="@color/white"
