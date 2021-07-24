@@ -90,7 +90,8 @@
             android:isIndicator="true"
             android:numStars="5"
             android:rating="4.5"
-            android:stepSize="0.5" />
+            android:stepSize="0.5"
+            tools:ignore="UsingOnClickInXml" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -100,7 +101,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="false"
             android:layout_marginTop="18dp"
-            android:onClick="goToLocalizacion"
+            android:onClick="goToVeterinaria"
             android:src="@drawable/loc" />
 
     </RelativeLayout>
@@ -124,6 +125,7 @@
             android:layout_marginStart="22dp"
             android:layout_marginLeft="22dp"
             android:layout_marginTop="15dp"
+            android:onClick="goToInicio"
             android:textAllCaps="false"
             android:textColor="#008692"
             app:backgroundTint="#A8E6F8"
@@ -140,6 +142,7 @@
             android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/button2"
             android:layout_toRightOf="@+id/button2"
+            android:onClick="goToServiciolocal"
             android:textAllCaps="false"
             android:textColor="#008692"
             android:textIsSelectable="true"
@@ -157,6 +160,7 @@
             android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/button4"
             android:layout_toRightOf="@+id/button4"
+            android:onClick="goToLogin"
             android:textAllCaps="false"
             android:textColor="#008692"
             android:textIsSelectable="true"

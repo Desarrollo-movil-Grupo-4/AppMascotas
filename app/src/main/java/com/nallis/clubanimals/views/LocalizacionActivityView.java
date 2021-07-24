@@ -8,12 +8,14 @@ import android.view.View;
 
 import com.nallis.clubanimals.R;
 
+import static com.nallis.clubanimals.R.layout.activity_localizacion_view;
+
 public class LocalizacionActivityView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_localizacion_view);
+        setContentView(activity_localizacion_view);
     }
     public void goToVeterinaria (View view){
         Intent intent = new Intent(this, VeterinariaActivity.class);
