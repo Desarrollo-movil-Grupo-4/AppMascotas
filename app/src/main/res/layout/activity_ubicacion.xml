@@ -24,7 +24,7 @@
             android:layout_toRightOf="@+id/button7"
             android:gravity="center"
             android:onClick="goToPerfil"
-            android:text="Cuenta USuario"
+            android:text="Cuenta Usuario"
             android:textColor="#009688"
             android:textSize="24sp"
             android:textStyle="bold"

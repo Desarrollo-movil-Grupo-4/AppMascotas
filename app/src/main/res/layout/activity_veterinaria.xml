@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    >
+    android:background="#6110C0E7">
 
     <TextView
         android:id="@+id/infoVacunacion"
@@ -21,7 +20,6 @@
         android:layout_marginTop="243dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
         android:onClick="goToContratar"
         android:text="Vacunacion                        Descripcion                         precio"
         android:textColor="#009688"
@@ -42,7 +40,6 @@
         android:layout_marginTop="-18dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:background="@color/white"
         android:onClick="goToContratar"
         android:text="Medicina General                        Descripcion                         precio"
         android:textColor="#009688"
@@ -63,7 +60,6 @@
         android:layout_marginTop="252dp"
         android:layout_marginEnd="220dp"
         android:layout_marginRight="220dp"
-        android:background="@color/white"
         android:onClick="goToContratar"
         android:text="Guarderia                        Descripcion                         precio"
         android:textColor="#009688"
@@ -273,7 +269,6 @@
         android:layout_marginTop="-9dp"
         android:layout_marginEnd="214dp"
         android:layout_marginRight="214dp"
-        android:background="@color/white"
         android:onClick="goToContratar"
         android:text="Cirugia                        Descripcion                         precio"
         android:textColor="#009688"
