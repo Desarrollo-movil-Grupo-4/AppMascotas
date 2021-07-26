@@ -51,12 +51,17 @@ public class MainActivity extends AppCompatActivity {
     // metodo para validar el formulario de ingreso
 
     private boolean comprobarUsuario(){
+
+        // Castear la informacion introducida como usuario y contrasena
+        String correo = email.getText().toString();
+        String contrasena = password.getText().toString();
+
         // comprobar si el usuario esta vacio o no esta registrado
-        if (email.length() == 0 && email.toString() != usuario){
+        if (correo.length() == 0 && correo != usuario){
             return false;
         }
         // comprobar la contrasena
-        else if(password.length() <= 8 && password.toString() != contrasena){
+        else if(contrasena.length() <= 8 && contrasena != contrasena){
             return false;
         }
         return true;
