@@ -40,11 +40,13 @@
         android:layout_margin="20dp"
         android:background="@drawable/border_radius"
         android:ems="10"
+        android:drawablePadding="12dp"
         android:fontFamily="sans-serif-light"
         android:hint="@string/text_email"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:drawableLeft="@drawable/ic_baseline_email_24" />
 
 
     <EditText
@@ -58,7 +60,9 @@
         android:hint="@string/num_password"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+
+        android:drawableLeft="@drawable/ic_baseline_lock_24" />
 
     <Button
         android:id="@+id/buttonLogin"

@@ -38,12 +38,11 @@
         android:width="50dp"
         android:height="50dp"
         android:background="@drawable/border_radius"
-        android:drawableRight="@android:drawable/ic_menu_search"
         android:gravity="left"
         android:padding="10dp"
         android:text="Buscar"
         android:textSize="24sp"
-        app:drawableTint="@color/teal_700" />
+        android:drawableRight="@drawable/ic_baseline_search_24"/>
 
     <Button
         android:id="@+id/general"
