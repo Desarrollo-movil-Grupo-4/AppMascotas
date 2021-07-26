@@ -66,23 +66,28 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:layout_margin="20dp"
-        android:background="@drawable/buttom_round"
-        android:onClick="goToInicio"
+        android:background="@drawable/anima_boton"
+        android:onClick="goToVeterinaria"
         android:padding="8dp"
+        android:selectAllOnFocus="false"
         android:text="@string/text_entrar"
+        android:textIsSelectable="false"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#17B556" />
+        app:backgroundTint="#4CAF50" />
+
+    <CheckBox
+        android:id="@+id/sesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar sesion" />
 
     <TextView
         android:id="@+id/nomVet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
-        android:onClick="goToVeterinaria"
         android:text="¿Si aun no estas resgistrado? Registrarme"
-        android:onClick="goToRegistro"
-        android:text="@string/text_resgistro"
         android:textColor="#017F8D"
         android:textSize="24sp" />
 
@@ -90,9 +95,7 @@
         android:id="@+id/enlaceRecuContra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:gravity="center|center_horizontal"
-        android:onClick="goToContrasena"
         android:text="@string/text_contraseña"
         android:textColor="#017F8D"
         android:textSize="24sp" />

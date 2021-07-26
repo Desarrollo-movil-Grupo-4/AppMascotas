@@ -115,9 +115,6 @@
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:drawableLeft="@drawable/map_marker_radius"
-            android:gravity="center|start"
-            android:text="Calle siempre viva"
-
             android:drawablePadding="12dp"
             android:gravity="center|start"
             android:text="@string/text_direccion"
@@ -140,8 +137,6 @@
             android:gravity="center|start"
             android:text="5555555"
             android:drawablePadding="10dp"
-            android:gravity="center|start"
-            android:text="@string/num_telefono"
 
             android:textColor="#009688"
             android:textSize="24sp"
@@ -160,8 +155,7 @@
             android:gravity="center|start"
             android:text="correo@correo.com"
             android:drawablePadding="10dp"
-            android:gravity="center|start"
-            android:text="@string/text_correo"
+
 
             android:textColor="#009688"
             android:textSize="24sp"
