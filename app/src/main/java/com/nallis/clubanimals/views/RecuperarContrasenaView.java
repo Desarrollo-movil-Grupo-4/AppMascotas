@@ -55,7 +55,7 @@ public class RecuperarContrasenaView extends AppCompatActivity {
         }
     }
 
-    // metodo para devolerse al inicio
+    // metodo para devolerse a ingresar
     public void goToIngresar(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
