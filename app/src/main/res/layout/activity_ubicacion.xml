@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6110C0E7"
+    android:background="@color/fondo_app"
     android:orientation="vertical"
     tools:context=".views.InicioActivityView">
 
@@ -24,8 +24,8 @@
             android:layout_toRightOf="@+id/button7"
             android:gravity="center"
             android:onClick="goToPerfil"
-            android:text="Cuenta Usuario"
-            android:textColor="#009688"
+            android:text="@string/txt_usuario"
+            android:textColor="@color/color_primario"
             android:textSize="24sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="111dp"
@@ -44,7 +44,7 @@
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/menu"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
         <Button
             android:id="@+id/button8"
@@ -61,7 +61,7 @@
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/account_supervisor_circle_outline"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
     </RelativeLayout>
 
@@ -78,8 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
             android:layout_marginTop="-295dp"
-            android:text="servicios"
-            app:backgroundTint="#348CA4B9" />
+            android:text="@string/txt_servicio"
+            android:textStyle="bold"
+            app:backgroundTint="#4CAF50" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -127,11 +128,11 @@
             android:layout_marginTop="15dp"
             android:onClick="goToInicio"
             android:textAllCaps="false"
-            android:textColor="#008692"
+            android:textColor="@color/color_primario"
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/home_import_outline"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
         <Button
             android:id="@+id/button3"
@@ -144,12 +145,12 @@
             android:layout_toRightOf="@+id/button2"
             android:onClick="goToServiciolocal"
             android:textAllCaps="false"
-            android:textColor="#008692"
+            android:textColor="@color/color_primario"
             android:textIsSelectable="true"
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/map_marker_multiple__1_"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
         <Button
             android:id="@+id/button5"
@@ -162,12 +163,12 @@
             android:layout_toRightOf="@+id/button4"
             android:onClick="goToLogin"
             android:textAllCaps="false"
-            android:textColor="#008692"
+            android:textColor="@color/color_primario"
             android:textIsSelectable="true"
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/logout"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
         <Button
             android:id="@+id/button4"
@@ -179,12 +180,12 @@
             android:layout_toEndOf="@+id/button3"
             android:layout_toRightOf="@+id/button3"
             android:textAllCaps="false"
-            android:textColor="#008692"
+            android:textColor="@color/color_primario"
             android:textIsSelectable="true"
             app:backgroundTint="#A8E6F8"
             app:icon="@drawable/paw"
             app:iconPadding="2dp"
-            app:iconTint="#008187" />
+            app:iconTint="@color/color_primario" />
 
     </RelativeLayout>
 

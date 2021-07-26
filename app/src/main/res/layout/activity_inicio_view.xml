@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6110C0E7"
+    android:background="@color/fondo_app"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".views.InicioActivityView">
 
     <TextView
         android:id="@+id/nomPerfil"
-        android:layout_width="301dp"
+        android:layout_width="349dp"
         android:layout_height="49dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
@@ -21,8 +21,8 @@
         android:gravity="center|left"
         android:onClick="goToPerfil"
         android:paddingLeft="25dp"
-        android:text="Pepito Perez"
-        android:textColor="#009688"
+        android:text="@string/txt_perfil"
+        android:textColor="@color/color_primario"
         android:textSize="34sp"
         android:textStyle="bold"
         app:drawableTint="#009688"
@@ -38,11 +38,11 @@
         android:width="50dp"
         android:height="50dp"
         android:background="@drawable/border_radius"
+        android:drawableRight="@drawable/ic_baseline_search_24"
         android:gravity="left"
         android:padding="10dp"
         android:text="Buscar"
-        android:textSize="24sp"
-        android:drawableRight="@drawable/ic_baseline_search_24"/>
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/general"
@@ -56,12 +56,12 @@
         android:inputType="textPersonName"
         android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
-        android:text="Clinica general"
+        android:text="@string/txt_general"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <Button
@@ -76,12 +76,12 @@
         android:inputType="textPersonName"
         android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
-        android:text="Odontología"
+        android:text="@string/txt_odontologia"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <EditText
@@ -96,12 +96,12 @@
         android:inputType="textPersonName"
         android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
-        android:text="Cirugía"
+        android:text="@string/txt_cirugia"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <EditText
@@ -116,12 +116,12 @@
         android:inputType="textPersonName"
         android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
-        android:text="Rayos X"
+        android:text="@string/txt_rayos"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <EditText
@@ -136,12 +136,12 @@
         android:inputType="textPersonName"
         android:onClick="goToVeterinaria"
         android:paddingRight="30dp"
-        android:text="Baños y Peluquería"
+        android:text="@string/txt_aseo"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <EditText
@@ -156,12 +156,12 @@
         android:inputType="textPersonName"
         android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
-        android:text="Guarderia"
+        android:text="@string/txt_guarderia"
         android:textColor="@color/white"
         android:textColorHighlight="#F3FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="#009688"
+        app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
     <LinearLayout

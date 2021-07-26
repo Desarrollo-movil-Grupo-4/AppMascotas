@@ -39,7 +39,7 @@
     <string name="action_1">Finalizar transacción</string>
     <string name="action_2">Cerrar</string>
     <string name="tv_titulo_confirmacion">Enhorabuena, Nombre!</string>
-    <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada satisfactoriamente</string>
+    <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada con éxito</string>
     //string de contratar
     <string name="text_nom_vet">Nombre de la veterinaria</string>
     <string name="text_nombre">Tu Nombre</string>
@@ -54,10 +54,21 @@
     <string name="text_email">Email</string>
     <string name="num_password">Password</string>
     <string name="text_entrar">Entrar</string>
-    <string name="text_resgistro">¿Si aun no estas resgistrado? Registrarme</string>
+    <string name="text_resgistro">¿Si aún no estás registrado? Registrarme</string>
     <string name="text_contraseña">Olvide mi contraseña</string>
-    //string localizacion de un servicio
-    <string name="Descservubicacion">Encuentra tu veterinaria más cercana de acuerdo con tu ubicacion</string>
+    //string localización de un servicio
+    <string name="Descservubicacion">Encuentra tu veterinaria más cercana de acuerdo con tu ubicación</string>
     <string name="nomservicio">SERVICIO</string>
     <string name="sertovet">IR</string>
+    //inico
+    <string name="txt_guarderia">Guardería</string>
+    <string name="txt_general">Clínica General</string>
+    <string name="txt_odontologia">Odontología</string>
+    <string name="txt_cirugia">Cirugía</string>
+    <string name="txt_aseo">Baño y peluquería</string>
+    <string name="txt_rayos">Rayos X</string>
+    <string name="txt_perfil">Nombre usuario</string>
+    //activity ubicacion
+    <string name="txt_usuario">Cuenta Usuario</string>
+    <string name="txt_servicio">Servicios</string>
 </resources>

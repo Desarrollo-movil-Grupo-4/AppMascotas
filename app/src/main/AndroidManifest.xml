@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClubAnimals">
+
         <activity android:name=".views.UbicacionActivity" />
         <activity android:name=".views.serviciolocal" />
         <activity android:name=".views.LocalizacionActivityView" />
