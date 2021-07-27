@@ -12,7 +12,6 @@
 
         <activity android:name=".views.UbicacionActivity" />
         <activity android:name=".views.serviciolocal" />
-        <activity android:name=".views.LocalizacionActivityView" />
         <activity android:name=".views.VeterinariaActivity" />
         <activity android:name=".views.ContratarActivityView" />
         <activity android:name=".views.ResumenContratarView" />

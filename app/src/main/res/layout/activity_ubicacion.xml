@@ -83,7 +83,7 @@
             android:layout_width="244dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
-            android:layout_marginTop="-280dp"
+            android:layout_marginTop="-324dp"
             android:text="@string/txt_servicio"
             android:textStyle="bold"
             app:backgroundTint="#4CAF50" />
@@ -102,12 +102,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="347dp"
-            android:layout_height="201dp"
+            android:layout_width="335dp"
+            android:layout_height="238dp"
             android:layout_alignParentLeft="false"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="false"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="138dp"
             android:onClick="goToVeterinaria"
             android:src="@drawable/loc" />
 
