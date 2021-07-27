@@ -71,4 +71,7 @@
     //activity ubicacion
     <string name="txt_usuario">Cuenta Usuario</string>
     <string name="txt_servicio">Servicios</string>
+    //activity veterinaria
+    <string name="nombre_vet">TINI-PET</string>
+
 </resources>
