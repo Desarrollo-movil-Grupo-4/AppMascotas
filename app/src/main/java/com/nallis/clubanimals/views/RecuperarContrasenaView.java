@@ -31,7 +31,7 @@ public class RecuperarContrasenaView extends AppCompatActivity {
         recuperarBoton = findViewById(R.id.btn_recuperar);
         emailEditText = findViewById(R.id.etxt_email);
 
-        //Poner un litener al boton recuperar
+        //Poner un listener al boton recuperar
         recuperarBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

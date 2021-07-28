@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Crear variables
     public static String usuario = "ejemplo@ejemplo.com";
-    public static String contrasena = "ejemplo123";
+    public static String contrasenas = "ejemplo123";
 
     //Crear objetos
     private EditText email;
@@ -32,19 +32,6 @@ public class MainActivity extends AppCompatActivity {
         // Comunicarse parte logica y grafica
         email = (EditText) findViewById(R.id.Email);
         password = (EditText)findViewById(R.id.Password);
-
-
-        // Escucha del evento Enter y se lanza a la funcion de comprobarUsuario
-        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == R.id.buttonLogin || actionId == EditorInfo.IME_NULL){
-                    comprobarUsuario();
-                    return true;
-                }
-                return false;
-            }
-        });
 
     }
 
@@ -61,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         // comprobar la contrasena
-        else if(contrasena.length() <= 8 && contrasena != contrasena){
+        else if(contrasena.length() <= 8 && contrasena != contrasenas){
             return false;
         }
         return true;
@@ -76,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
     // metodo para ir a Inicio
     public void goToInicio(View view){
-        if (comprobarUsuario()) {
+        if (this.comprobarUsuario()) {
             Intent intent = new Intent(this, InicioActivityView.class);
             startActivity(intent);
         }else {
-            Toast mensaje = Toast.makeText(getApplicationContext(),"Usuario o contraseña invalidos",Toast.LENGTH_LONG );
+            Toast mensaje = Toast.makeText(getApplicationContext(),"Usuario o contraseña invalidos",Toast.LENGTH_SHORT );
             mensaje.show();
         };
     }
