@@ -16,11 +16,13 @@ import com.nallis.clubanimals.R;
 
 import java.util.regex.Pattern;
 
+
 public class RecuperarContrasenaView extends AppCompatActivity {
 
     // Crear objetos
     Button recuperarBoton;
     EditText emailEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

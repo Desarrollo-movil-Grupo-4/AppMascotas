@@ -18,19 +18,21 @@
         android:layout_marginTop="60dp"
         android:gravity="center|center_horizontal"
         android:text="@string/text_app"
-        android:textColor="#017F8D"
+        android:textColor="@color/color_primario"
         android:textSize="34sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imaView"
-        android:layout_width="123dp"
-        android:layout_height="160dp"
-        android:layout_alignParentTop="false"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center|center_vertical"
-        android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/fredo_y_max" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:src="@drawable/fredo_y_max"
+        app:civ_border_color="@color/color_primario"
+        app:civ_border_width="2dp" />
 
     <EditText
         android:id="@+id/Email"
@@ -40,11 +42,13 @@
         android:layout_margin="20dp"
         android:background="@drawable/border_radius"
         android:ems="10"
+        android:drawablePadding="12dp"
         android:fontFamily="sans-serif-light"
         android:hint="@string/text_email"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:drawableLeft="@drawable/ic_baseline_email_24" />
 
 
     <EditText
@@ -54,9 +58,12 @@
         android:layout_gravity="center|center_horizontal"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="12dp"
         android:ems="10"
         android:hint="@string/num_password"
         android:inputType="textPassword"
+
         android:padding="10dp"
         android:textSize="24sp" />
 
@@ -81,7 +88,7 @@
         android:gravity="center|center_horizontal"
         android:onClick="goToRegistro"
         android:text="@string/text_resgistro"
-        android:textColor="#017F8D"
+        android:textColor="@color/color_primario"
         android:textSize="24sp" />
 
     <TextView
@@ -92,7 +99,7 @@
         android:gravity="center|center_horizontal"
         android:onClick="goToContrasena"
         android:text="@string/text_contraseña"
-        android:textColor="#017F8D"
+        android:textColor="@color/color_primario"
         android:textSize="24sp" />
 
 

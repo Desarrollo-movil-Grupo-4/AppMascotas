@@ -9,12 +9,11 @@
     tools:context=".views.RegistroActivity">
 
     <LinearLayout
-        android:layout_width="309dp"
-        android:layout_height="676dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="331dp"
+        android:layout_height="616dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

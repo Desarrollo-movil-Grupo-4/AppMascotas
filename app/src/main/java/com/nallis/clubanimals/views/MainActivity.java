@@ -16,6 +16,7 @@ import com.nallis.clubanimals.R;
 
 public class MainActivity extends AppCompatActivity {
 
+
     //Crear variables
     public static String usuario = "ejemplo@ejemplo.com";
     public static String contrasenas = "ejemplo123";
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     //Crear objetos
     private EditText email;
     private EditText password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
