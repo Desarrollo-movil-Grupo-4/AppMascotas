@@ -2,7 +2,9 @@ package com.nallis.clubanimals.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     //Crear objetos
     private EditText email;
     private EditText password;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -34,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
         // Comunicarse parte logica y grafica
         email = (EditText) findViewById(R.id.Email);
         password = (EditText)findViewById(R.id.Password);
+
+        preferences = getSharedPreferences("Usuarios", Context.MODE_PRIVATE);
+        editor = preferences.edit();
+
+
+        // metodo para comprobar si ya fue logeado y llevar al inicio
+        if(! revisarSesion()){
+            Intent intent = new Intent(this, InicioActivityView.class);
+            startActivity(intent);
+        };
+
+
 
     }
 
@@ -66,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
     // metodo para ir a Inicio
     public void goToInicio(View view){
         if (this.comprobarUsuario()) {
+            // Castear la informacion introducida como usuario y contrasena
+            String correo = email.getText().toString();
+            String contrasena = password.getText().toString();
+
+            //Guardar en sharedpreferences el correo y la contrasena
+            editor.putString("correo",contrasena);
+            editor.apply();
             Intent intent = new Intent(this, InicioActivityView.class);
             startActivity(intent);
         }else {
@@ -78,5 +101,10 @@ public class MainActivity extends AppCompatActivity {
     public void goToContrasena(View view){
         Intent intent = new Intent(this, RecuperarContrasenaView.class);
         startActivity(intent);
+    }
+
+    //metodo para comprobar si fue logeado
+    private boolean revisarSesion (){
+        return this.preferences.getString("correo","").length() ==0;
     }
 }
