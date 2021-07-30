@@ -91,7 +91,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/boton_redondo"
-            android:onClick="goToInicio"
             android:text="@string/btn_registrarse"
             android:textColor="@color/white"
             app:backgroundTint="#69CF13" />

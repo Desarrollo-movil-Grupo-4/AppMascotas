@@ -1,7 +1,5 @@
 package com.nallis.clubanimals.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nallis.clubanimals.R;
 
@@ -63,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToVeterinaria(View view) {
         Intent intent = new Intent(this, VeterinariaActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToRegistrar(View view) {
+        Intent intent = new Intent(this, RegistroActivity.class);
         startActivity(intent);
     }
 }
