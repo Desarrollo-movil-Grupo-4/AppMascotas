@@ -3,14 +3,9 @@ package com.nallis.clubanimals.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -58,8 +53,9 @@ public class RegistroActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
 
-
+        // Conexion parte logica con la grafica
         nombre = (EditText) findViewById(R.id.txt_nombre);
+        nombreEditText = (EditText)findViewById(R.id.txt_nombre);
         correo = (EditText) findViewById(R.id.txt_correo);
         contrasena = (EditText) findViewById(R.id.txt_contrasena);
         confcontrasena = (EditText) findViewById(R.id.txt_confirmar_contrasena);
@@ -118,25 +114,21 @@ public class RegistroActivity extends AppCompatActivity {
             });
         }
 
-  // Conexion parte logica con la grafica
-        nombreEditText = findViewById(R.id.txt_nombre);
-        correoEditText = findViewById(R.id.txt_correo);
-        contrasenaEditText = findViewById(R.id.txt_contrasena);
-        confirmarContrasenaEditText = findViewById(R.id.txt_confirmar_contrasena);
-
         // Escucha del evento Enter en nombre y se lanza a la funcion de comprobar Nombre
-        nombreEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-               if (actionId == EditorInfo.IME_NULL){
-                   comprobarNombre();
-                   return true;
-               }return false;
-            }
-        });
+/*
+        nombre.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event){
+            if (actionId == EditorInfo.IME_NULL){
+                comprobarNombre();
+                return true;
+            }return false;
+        }
+    });
 
         // Escucha del evento Enter en correo y se lanza a la funcion de comprobar correo
-        correoEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+        correo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_NULL){
@@ -147,7 +139,7 @@ public class RegistroActivity extends AppCompatActivity {
         });
 
         // Escucha del evento Enter en contrasena y se lanza a la funcion de comprobar contrasena
-        contrasenaEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        contrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_NULL){
@@ -158,7 +150,7 @@ public class RegistroActivity extends AppCompatActivity {
         });
 
         // Escucha del evento Enter en confirmar contrasena y se lanza a la funcion de comprobar confirmar contrasena
-        confirmarContrasenaEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        confcontrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_NULL){
@@ -167,16 +159,17 @@ public class RegistroActivity extends AppCompatActivity {
                 }return false;
             }
         });
-    }
+
+*/
 
     // metodo para combrobar Nombre
     public boolean comprobarNombre(){
         // Castear el nombre,
-        String nombre = nombreEditText.getText().toString();
+        String name = nombre.getText().toString();
         // validar el string introducido no este vacio
-        if (nombre.isEmpty()){
+        if (name.isEmpty()){
             // mostar en el editext nombre el error
-            nombreEditText.setError("Introducir Nombre por favor");
+            nombre.setError("Introducir Nombre por favor");
             return false;
         }return true;
     }

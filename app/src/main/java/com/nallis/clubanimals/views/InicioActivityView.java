@@ -80,6 +80,7 @@ public class InicioActivityView extends AppCompatActivity {
 
     public void goToVeterinaria(View view){
         Intent intent = new Intent(this, VeterinariaActivity.class);
+        startActivity(intent);
 
     }
     public void goToServiciolocal(View view) {
@@ -89,18 +90,6 @@ public class InicioActivityView extends AppCompatActivity {
     }
     public void goToLocalizacion(View view) {
         Intent intent = new Intent(this, serviciolocal.class);
-        startActivity(intent);
-    }
-    public void goToVeterinaria(View view) {
-        Intent intent = new Intent(this, VeterinariaActivity.class);
-        startActivity(intent);
-    }
-    public void goToLogin(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-    public void goToInicio(View view) {
-        Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
     }
 }

@@ -1,25 +1,15 @@
 package com.nallis.clubanimals.views;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,26 +20,25 @@ import com.nallis.clubanimals.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_login;
-    private CheckBox sesion;
     private EditText txt_email;
     private EditText txt_contra;
     
     //Variables de inicio de sesión
 
-    private String email;
-    private String password;
+    private String correo;
+    private String contrasena;
 
     FirebaseAuth auth;
 
     //Crear variables
-    public static String usuario = "ejemplo@ejemplo.com";
-    public static String contrasenas = "ejemplo123";
+    //public static String usuario = "ejemplo@ejemplo.com";
+    //public static String contrasenas = "ejemplo123";
 
     //Crear objetos
-    private EditText email;
-    private EditText password;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
+    //private EditText email;
+    //private EditText password;
+    //SharedPreferences preferences;
+    //SharedPreferences.Editor editor;
 
 
     @Override
@@ -68,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email =  txt_email.getText().toString();
-                password = txt_contra.getText().toString();
+                correo =  txt_email.getText().toString();
+                contrasena = txt_contra.getText().toString();
 
-                if (!email.isEmpty() && !password.isEmpty()){
+                if (!correo.isEmpty() && !contrasena.isEmpty()){
                     loginUsuario();
                 }else{
                     Toast.makeText(MainActivity.this, "Complete los campos", Toast.LENGTH_SHORT).show();
@@ -81,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginUsuario(){
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(correo, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
@@ -103,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             fileList();
         }
     }
-
+/*
     public void goToRegistrar(View view) {
 
         // Comunicarse parte logica y grafica
@@ -149,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegistroActivity.class);
         startActivity(intent);
     }
-}
+
 
     // metodo para ir a Inicio
     public void goToInicio(View view){
@@ -179,4 +168,14 @@ public class MainActivity extends AppCompatActivity {
     private boolean revisarSesion (){
         return this.preferences.getString("correo","").length() ==0;
     }
+ */
+    public void goToRegistrar(View view){
+        Intent intent = new Intent(this, RegistroActivity.class);
+        startActivity(intent);
+    }
+    public void goToContrasena(View view){
+        Intent intent = new Intent(this, RecuperarContrasenaView.class);
+        startActivity(intent);
+    }
+
 }

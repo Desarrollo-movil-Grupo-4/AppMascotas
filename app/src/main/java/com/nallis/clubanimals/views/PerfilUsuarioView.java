@@ -1,19 +1,14 @@
 package com.nallis.clubanimals.views;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.nallis.clubanimals.R;
 
 public class PerfilUsuarioView extends AppCompatActivity {
@@ -21,7 +16,7 @@ public class PerfilUsuarioView extends AppCompatActivity {
     private Button btn_img;
     private TextView tv_result;
 
-    private static final int GALERIA = 1;
+    //private static final int GALERIA = 1;
 
     StorageReference stores;
 
@@ -29,7 +24,13 @@ public class PerfilUsuarioView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario_view);
-
+    }
+        public void goToInicio(View v){
+            Intent intent = new Intent(this, InicioActivityView.class);
+            startActivity(intent);
+        }
+    }
+/*
         btn_img = (Button)findViewById(R.id.btn_image);
 
         stores = FirebaseStorage.getInstance().getReference();
@@ -63,8 +64,5 @@ public class PerfilUsuarioView extends AppCompatActivity {
         });
     }
 
-    public void goToInicio(View view){
-        Intent intent = new Intent(this, InicioActivityView.class);
-        startActivity(intent);
-    }
-}
+
+ */
