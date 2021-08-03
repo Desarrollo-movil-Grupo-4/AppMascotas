@@ -41,14 +41,14 @@ public class VeterinariaActivity extends AppCompatActivity {
 
         db = FirebaseDatabase.getInstance().getReference();
 
-        db.child("Veterinaria").addValueEventListener(new ValueEventListener() {
+        db.child("Veterinaria").child("ruflandia").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     String name = snapshot.child("nombre").getValue().toString();
                     String email = snapshot.child("correo").getValue().toString();
                     String address = snapshot.child("direccion").getValue().toString();
-                    String phone = snapshot.child("telefono").getValue().toString();
+                    String phone = snapshot.child("whatsapp").getValue().toString();
                     nombre_veterinaria.setText(name);
                     correo.setText(email);
                     direccion.setText(address);
