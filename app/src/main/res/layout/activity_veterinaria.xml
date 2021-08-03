@@ -10,6 +10,7 @@
         android:id="@+id/infoVacunacion"
         android:layout_width="169dp"
         android:layout_height="64dp"
+        android:layout_below="@+id/imagen"
         android:layout_below="@+id/imageCirugia"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -30,6 +31,7 @@
         android:id="@+id/infoGeneral"
         android:layout_width="169dp"
         android:layout_height="64dp"
+        android:layout_below="@+id/imagen"
         android:layout_below="@+id/imageCirugia"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -50,6 +52,7 @@
         android:id="@+id/infoGuarderia"
         android:layout_width="169dp"
         android:layout_height="64dp"
+        android:layout_below="@+id/imagen"
         android:layout_below="@+id/imageCirugia"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -75,6 +78,8 @@
         tools:layout_editor_absoluteY="-3dp" />
 
     <TextView
+
+        android:id="@+id/nombre_vet"
         android:id="@+id/titulo"
         android:layout_width="109dp"
         android:layout_height="25dp"
@@ -95,6 +100,14 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="84dp"
+        android:layout_height="72dp"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -110,6 +123,11 @@
         app:civ_border_width="2dp" />
 
     <ImageView
+               
+        android:id="@+id/imagen"
+        android:layout_width="166dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/textView3"
         android:id="@+id/imageCirugia"
         android:layout_width="175dp"
         android:layout_height="126dp"
@@ -140,6 +158,11 @@
         android:src="@drawable/general" />
 
     <ImageView
+
+        android:id="@+id/imageView5"
+        android:layout_width="171dp"
+        android:layout_height="131dp"
+        android:layout_below="@+id/imagen"
         android:id="@+id/imageGuarderia"
         android:layout_width="175dp"
         android:layout_height="126dp"
@@ -175,6 +198,11 @@
         android:background="@color/color_primario" />
 
     <EditText
+
+        android:id="@+id/direccion_vet"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_below="@+id/imageView5"
         android:id="@+id/direccionTienda"
         android:layout_width="195dp"
         android:layout_height="wrap_content"
@@ -196,6 +224,13 @@
         android:textColor="@android:color/white"
         android:textColorHint="@color/white"
         android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_below="@+id/imageView5"
 
     <EditText
         android:id="@+id/correoTienda"
@@ -222,6 +257,11 @@
         app:drawableTint="@color/white" />
 
     <EditText
+
+        android:id="@+id/telefono_vet"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/imageView5"
         android:id="@+id/telTienda"
         android:layout_width="195dp"
         android:layout_height="wrap_content"
@@ -271,6 +311,7 @@
         android:id="@+id/infoCirugia"
         android:layout_width="169dp"
         android:layout_height="64dp"
+        android:layout_below="@+id/imagen"
         android:layout_below="@+id/imageCirugia"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
