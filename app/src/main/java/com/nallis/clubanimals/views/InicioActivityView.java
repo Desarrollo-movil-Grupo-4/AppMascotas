@@ -73,16 +73,34 @@ public class InicioActivityView extends AppCompatActivity {
         });
     }
 
-    public void goToPerfil(View view){
+    public void goToPerfil(View view) {
         Intent intent = new Intent(this, PerfilUsuarioView.class);
         startActivity(intent);
     }
+
     public void goToVeterinaria(View view){
+        Intent intent = new Intent(this, VeterinariaActivity.class);
+
+    }
+    public void goToServiciolocal(View view) {
+        Intent intent = new Intent(this, UbicacionActivity.class);
+
+        startActivity(intent);
+    }
+    public void goToLocalizacion(View view) {
+        Intent intent = new Intent(this, serviciolocal.class);
+        startActivity(intent);
+    }
+    public void goToVeterinaria(View view) {
         Intent intent = new Intent(this, VeterinariaActivity.class);
         startActivity(intent);
     }
-    public void goToContratar(View view){
-        Intent intent = new Intent(this, ContratarActivityView.class);
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void goToInicio(View view) {
+        Intent intent = new Intent(this, InicioActivityView.class);
         startActivity(intent);
     }
 }
