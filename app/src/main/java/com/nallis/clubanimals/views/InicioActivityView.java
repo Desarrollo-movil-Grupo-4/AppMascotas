@@ -3,7 +3,6 @@ package com.nallis.clubanimals.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.GeolocationPermissions;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -78,8 +77,8 @@ public class InicioActivityView extends AppCompatActivity {
         Intent intent = new Intent(this, PerfilUsuarioView.class);
         startActivity(intent);
     }
-    public void goToGeolocalizacion(View view){
-        Intent intent = new Intent(this, GeolocationPermissions.class);
+    public void goToVeterinaria(View view){
+        Intent intent = new Intent(this, VeterinariaActivity.class);
         startActivity(intent);
     }
     public void goToContratar(View view){

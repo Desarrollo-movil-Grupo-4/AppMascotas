@@ -178,6 +178,7 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
             android:drawableRight="@drawable/map_marker_radius"
+            android:onClick="goToVeterinaria"
             app:backgroundTint="@color/white"
             app:drawableTint="#009688"
             app:iconGravity="end" />
