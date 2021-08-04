@@ -79,13 +79,13 @@ public class InicioActivityView extends AppCompatActivity {
     }
 
     public void goToVeterinaria(View view){
-        Intent intent = new Intent(this, VeterinariaActivity.class);
+        //Intent intent = new Intent(this, VeterinariaActivity.class);
+        Intent intent = new Intent(this, ListadoVeterinarias.class);
         startActivity(intent);
 
     }
     public void goToServiciolocal(View view) {
         Intent intent = new Intent(this, UbicacionActivity.class);
-
         startActivity(intent);
     }
     public void goToLocalizacion(View view) {
