@@ -38,6 +38,8 @@ public class ListadoVeterinarias extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         veterinarias = new ArrayList<>();
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         adapter = new Adapter(veterinarias);
@@ -52,7 +54,9 @@ public class ListadoVeterinarias extends AppCompatActivity {
                         dataSnapshot.getChildren()) {
 
                     Veterinaria veterinaria = snapshot.getValue(Veterinaria.class);
-                    veterinarias.add(veterinaria);
+                    if(veterinaria.getS01().length() != 0){
+
+                    veterinarias.add(veterinaria);};
 
 
                 }
@@ -64,5 +68,6 @@ public class ListadoVeterinarias extends AppCompatActivity {
 
             }
         });
+
     }
 }
