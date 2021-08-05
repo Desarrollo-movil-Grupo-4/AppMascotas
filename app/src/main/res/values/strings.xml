@@ -73,5 +73,6 @@
     <string name="txt_servicio">Servicios</string>
     //activity veterinaria
     <string name="nombre_vet">TINI-PET</string>
+    <string name="title_activity_map">Map</string>
 
 </resources>

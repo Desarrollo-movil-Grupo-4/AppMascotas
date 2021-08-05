@@ -39,6 +39,8 @@ public class RegistroActivity extends AppCompatActivity {
     private String pass = "";
     private String conpass = "";
 
+
+
     //firebase
     FirebaseAuth auth;
     DatabaseReference db;
@@ -59,6 +61,7 @@ public class RegistroActivity extends AppCompatActivity {
         correo = (EditText) findViewById(R.id.txt_correo);
         contrasena = (EditText) findViewById(R.id.txt_contrasena);
         confcontrasena = (EditText) findViewById(R.id.txt_confirmar_contrasena);
+
         btn_registrar = findViewById(R.id.btn__registrarse);
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +94,8 @@ public class RegistroActivity extends AppCompatActivity {
                         map.put( "email", email);
                         map.put( "pass", pass);
                         map.put( "conpass", conpass);
+                        map.put("latitud", "");
+                        map.put("longitud", "");
 
                         String id = auth.getCurrentUser().getUid();
 
