@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_login;
     private EditText txt_email;
     private EditText txt_contra;
-    
+
     //Variables de inicio de sesión
 
     private String correo;
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //sesion = findViewById(R.id.sesion);
         txt_email = findViewById(R.id.Email);
         txt_contra = findViewById(R.id.Password);
+
         btn_login = findViewById(R.id.buttonLogin);
 
         btn_login.setOnClickListener(new View.OnClickListener() {

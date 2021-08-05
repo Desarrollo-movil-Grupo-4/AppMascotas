@@ -1,7 +1,14 @@
 package com.nallis.clubanimals.views;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -10,13 +17,26 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.databinding.ActivityMapBinding;
 
+import java.util.ArrayList;
+
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private  ArrayList local = new ArrayList();
 
     private GoogleMap mMap;
     private ActivityMapBinding binding;
+
+    private LocationManager ubicacion;
+
+    DatabaseReference db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +45,16 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        db = FirebaseDatabase.getInstance().getReference();
+
+        //localizarMovimientos();
+        localizacion();
     }
 
     /**
@@ -42,20 +68,102 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
-        /*
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(5.14389491, -73.68248084);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-         */
-        LatLng Bogota = new LatLng(4.6533326, -74.083652);
-        mMap.addMarker(new MarkerOptions().position(Bogota).title("Bogotá"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Bogota, 9));
 
-        LatLng Micasa = new LatLng(5.14389491, -73.68248084);
-        mMap.addMarker(new MarkerOptions().position(Micasa).title("Micasa"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Micasa, 9));
+        db.child("Veterinaria").child("ruflandia").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
 
+                    String name = snapshot.child("nombre").getValue().toString();
+
+                    double lat = (double) snapshot.child("latitud").getValue();
+                    double lon = (double) snapshot.child("longitud").getValue();
+
+                    LatLng veterinaria = new LatLng( lat, lon);
+                    mMap.addMarker(new MarkerOptions().position(veterinaria).title(name));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(veterinaria, 9));
+
+                    LatLng positionUsuario = new LatLng( (double) local.get(0), (double) local.get(1));
+                    mMap.addMarker(new MarkerOptions().position(positionUsuario).title("Tu ubicacion"));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 9));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
+
+    public ArrayList localizacion() {
+
+        ubicacion = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION
+            }, 100);
+        }
+        Location location = ubicacion.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (location != null) {
+
+            local.add(location.getLatitude());
+            local.add(location.getLongitude());
+        }
+        return local;
+    }
+/*
+    public ArrayList localizarMovimientos() {
+
+        LocationListener location_listener = new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+
+                Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+
+                try {
+                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                    String address = addresses.get(0).getAddressLine(0);
+
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                local.add(location.getLatitude());
+                local.add(location.getLongitude());
+
+            }
+
+            @Override
+            public void onProviderEnabled(@NonNull String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(@NonNull String provider) {
+
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+        };
+        ubicacion = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED) {
+
+            //return;
+        }
+        ubicacion.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, location_listener);
+
+        return local;
+    }
+
+ */
 }
