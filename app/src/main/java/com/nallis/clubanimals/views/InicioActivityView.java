@@ -28,7 +28,8 @@ import java.util.Map;
 
 public class InicioActivityView extends AppCompatActivity {
 
-    private Button btn_cerrarsesion;
+
+    private Button btn_cerrarsesion, btn_consulta_general, btn_odontologia, btn_cirugia;
 
     private LocationManager ubicacion;
 
@@ -42,13 +43,14 @@ public class InicioActivityView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_view);
 
-        //metodo para cargar a la base de datos y la ubicacion
-
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
 
         btn_cerrarsesion = findViewById(R.id.btn_deslogueo);
+        btn_consulta_general = findViewById(R.id.btn_consulta_general);
+        btn_odontologia = findViewById(R.id.btn_odontologia);
+        btn_cirugia = findViewById(R.id.btn_cirugia);
 
         tv_result = (TextView)findViewById(R.id.nomPerfil);
 
@@ -61,7 +63,27 @@ public class InicioActivityView extends AppCompatActivity {
             }
         });
 
+        btn_consulta_general.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToListado(view, "s01");
+            }
+        });
+        btn_odontologia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToListado(view, "s02");
+            }
+        });
+        btn_cirugia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToListado(view, "s03");
+            }
+        });
+
         infoUsuario();
+        //metodo para cargar a la base de datos y la ubicacion
         localizacion();
     }
 
@@ -109,6 +131,13 @@ public class InicioActivityView extends AppCompatActivity {
         });
     }
 
+    public void goToListado(View view, String idServicio){
+        //Intent intent = new Intent(this, VeterinariaActivity.class);
+        Intent intent = new Intent(this, ListadoVeterinarias.class);
+        intent.putExtra("servicio", idServicio);
+        startActivity(intent);
+    }
+
     public void goToPerfil(View view) {
         Intent intent = new Intent(this, PerfilUsuarioView.class);
         startActivity(intent);
@@ -116,7 +145,7 @@ public class InicioActivityView extends AppCompatActivity {
 
     public void goToVeterinaria(View view){
         //Intent intent = new Intent(this, VeterinariaActivity.class);
-        Intent intent = new Intent(this, ListadoVeterinarias.class);
+        Intent intent = new Intent(this, serviciolocal.class);
         startActivity(intent);
 
     }

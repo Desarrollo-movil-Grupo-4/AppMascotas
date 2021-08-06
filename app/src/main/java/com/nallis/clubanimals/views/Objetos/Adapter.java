@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nallis.clubanimals.R;
-import com.nallis.clubanimals.views.ListadoVeterinarias;
 
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder> {
         Veterinaria veterinaria = veterinarias.get(position);
         holder.textViewNombreVet.setText(veterinaria.getNombre());
         holder.textViewDireccionVet.setText(veterinaria.getDireccion());
-        holder.textViewS01.setText(veterinaria.getS01());
+        //holder.textViewS01.setText(veterinaria.getS01());
     }
 
     @Override

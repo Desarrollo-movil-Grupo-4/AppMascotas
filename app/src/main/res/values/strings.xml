@@ -62,7 +62,7 @@
     <string name="sertovet">IR</string>
     //inico
     <string name="txt_guarderia">Guardería</string>
-    <string name="txt_general">Clínica General</string>
+    <string name="txt_general">Consulta General</string>
     <string name="txt_odontologia">Odontología</string>
     <string name="txt_cirugia">Cirugía</string>
     <string name="txt_aseo">Baño y peluquería</string>

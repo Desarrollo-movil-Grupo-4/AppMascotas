@@ -34,17 +34,12 @@
 
         <activity
             android:name=".views.MapActivity"
-            android:label="@string/title_activity_map">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_map"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".views.ListadoVeterinarias"
             android:exported="true" />
-        <activity android:name=".views.Splash"/>
+
 
         <activity android:name=".views.UbicacionActivity" />
         <activity android:name=".views.serviciolocal" />
@@ -55,7 +50,14 @@
         <activity android:name=".views.PerfilUsuarioView" />
         <activity android:name=".views.RegistroActivity" />
         <activity android:name=".views.InicioActivityView" />
-        <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.MainActivity"/>
+        <activity android:name=".views.Splash">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
     </application>
 
 </manifest>

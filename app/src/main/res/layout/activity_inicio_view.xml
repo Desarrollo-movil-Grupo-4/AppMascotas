@@ -45,9 +45,9 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/general"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:id="@+id/btn_consulta_general"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/dog"
@@ -65,16 +65,15 @@
         app:drawableTint="@color/white" />
 
     <Button
-        android:id="@+id/odontologia"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:id="@+id/btn_odontologia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/cat"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
         android:text="@string/txt_odontologia"
         android:textColor="@color/white"
@@ -84,17 +83,16 @@
         app:backgroundTint="@color/color_primario"
         app:drawableTint="@color/white" />
 
-    <EditText
-        android:id="@+id/cirugia"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+    <Button
+        android:id="@+id/btn_cirugia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/cow"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:onClick="goToServiciolocal"
         android:paddingRight="30dp"
         android:text="@string/txt_cirugia"
         android:textColor="@color/white"
@@ -106,8 +104,8 @@
 
     <EditText
         android:id="@+id/rayos"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/horse_variant"
@@ -126,8 +124,8 @@
 
     <EditText
         android:id="@+id/banos"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/dog"
@@ -146,8 +144,8 @@
 
     <EditText
         android:id="@+id/guarderia"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/border_radius"
         android:drawableRight="@drawable/cat"
