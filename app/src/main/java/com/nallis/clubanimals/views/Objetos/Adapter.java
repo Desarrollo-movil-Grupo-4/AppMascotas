@@ -55,6 +55,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
                     break;
                 case R.id.btn_localizar:
                     Intent i = new Intent(context, MapActivity.class);
+                    i.putExtra("nombrevet",textViewNombreVet.getText());
                     context.startActivity(i);
                     break;
                 case R.id.btn_contratar:
@@ -73,8 +74,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         public VeterinariasHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.row_recycler, parent, false);
-            //VeterinariasHolder holder = new VeterinariasHolder(v);
-            //return holder;
             return new VeterinariasHolder(v);
         }
 
@@ -83,7 +82,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             Veterinaria veterinaria = veterinarias.get(position);
             holder.textViewNombreVet.setText(veterinaria.getNombre());
             holder.textViewDireccionVet.setText(veterinaria.getDireccion());
-            //holder.textViewS01.setText(veterinaria.getS01());
+            //holder.textViewS01.setText(nombreServicio);
             // colocar evento
             holder.setOnClickListeners();
 

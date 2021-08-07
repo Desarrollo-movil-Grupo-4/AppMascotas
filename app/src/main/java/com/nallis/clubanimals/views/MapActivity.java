@@ -68,15 +68,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        String nombre = getIntent().getStringExtra("nombrevet");
         mMap = googleMap;
 
-        db.child("Veterinaria").child("ruflandia").addValueEventListener(new ValueEventListener() {
+        db.child("Veterinaria").child(nombre).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
 
-                    String name = snapshot.child("nombre").getValue().toString();
+                    String name = snapshot.child("nombrevet").getValue().toString();
 
                     double lat = (double) snapshot.child("latitud").getValue();
                     double lon = (double) snapshot.child("longitud").getValue();
