@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
     static class VeterinariasHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         //creacion de contexto
         Context context;
+        double latitud;
+        double longitud;
         // Creacion de objetos que muestra la tarjeta
         TextView textViewNombreVet, textViewDireccionVet, textViewS01;
         Button btnPerfil, btnLocalizacion, btnContratar;
@@ -31,6 +34,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         public VeterinariasHolder(@NonNull View itemView) {
             super(itemView);
             context = itemView.getContext();
+
             // conexion con la vista
             textViewNombreVet = itemView.findViewById(R.id.textview_nombrevet);
             textViewDireccionVet = itemView.findViewById(R.id.textview_direccionvet);
@@ -56,6 +60,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
                 case R.id.btn_localizar:
                     Intent i = new Intent(context, MapActivity.class);
                     i.putExtra("nombrevet",textViewNombreVet.getText());
+                    i.putExtra("latitudVet",latitud);
+                    i.putExtra("longitudVet",longitud);
                     context.startActivity(i);
                     break;
                 case R.id.btn_contratar:
@@ -80,6 +86,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         @Override
         public void onBindViewHolder(@NonNull VeterinariasHolder holder, int position) {
             Veterinaria veterinaria = veterinarias.get(position);
+            holder.latitud = veterinaria.getLatitud();
+            holder.longitud = veterinaria.getLongitud();
             holder.textViewNombreVet.setText(veterinaria.getNombre());
             holder.textViewDireccionVet.setText(veterinaria.getDireccion());
             //holder.textViewS01.setText(nombreServicio);

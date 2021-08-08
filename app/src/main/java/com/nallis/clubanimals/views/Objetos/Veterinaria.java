@@ -6,17 +6,19 @@ public class Veterinaria {
     String s01;
     String s02;
     String s03;
-    String servicio;
+    double latitud;
+    double longitud;
 
     public Veterinaria(){
     }
-    public Veterinaria(String nombre, String direccion, String s01, String s02, String s03, String servicio){
+    public Veterinaria(String nombre, String direccion, String s01, String s02, String s03, String servicio, double latitud, double longitud){
         this.nombre = nombre;
         this.direccion = direccion;
         this.s01 = s01;
         this.s02 = s02;
         this.s03 = s03;
-        this.servicio = servicio;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
     public String getNombre(){
         return nombre;
@@ -48,11 +50,16 @@ public class Veterinaria {
     public void setS03(String s03){
         this.s03 = s03;
     }
-
-    public String Servicios (String servicio){
-        return servicio;
+    public double getLatitud(){
+        return latitud;
     }
-    public void setServicios (String servicio){
-        this.servicio = servicio;
+    public void setLatitud(double latitud){
+        this.latitud = latitud;
+    }
+    public double getLongitud(){
+        return longitud;
+    }
+    public void setLongitud(double longitud){
+        this.longitud = longitud;
     }
 }

@@ -37,6 +37,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private LocationManager ubicacion;
 
     private String nombre;
+    private double lat;
+    private double lon;
 
     DatabaseReference db;
 
@@ -45,6 +47,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
 
         nombre = getIntent().getStringExtra("nombrevet");
+        lat = getIntent().getDoubleExtra("latitudVet",0);
+        lon = getIntent().getDoubleExtra("longitudVet",0);
+
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -75,30 +80,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         mMap = googleMap;
 
-        db.child("Veterinaria").child(nombre).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
+            LatLng veterinaria = new LatLng( lat, lon);
+            mMap.addMarker(new MarkerOptions().position(veterinaria).title(nombre));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(veterinaria, 9));
 
-                    String name = snapshot.child("nombre").getValue().toString();
+            LatLng positionUsuario = new LatLng( (double) local.get(0), (double) local.get(1));
+            mMap.addMarker(new MarkerOptions().position(positionUsuario).title("Tu ubicacion"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 9));
 
-                    double lat = (double) snapshot.child("latitud").getValue();
-                    double lon = (double) snapshot.child("longitud").getValue();
-
-                    LatLng veterinaria = new LatLng( lat, lon);
-                    mMap.addMarker(new MarkerOptions().position(veterinaria).title(name));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(veterinaria, 9));
-
-                    LatLng positionUsuario = new LatLng( (double) local.get(0), (double) local.get(1));
-                    mMap.addMarker(new MarkerOptions().position(positionUsuario).title("Tu ubicacion"));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 9));
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     public ArrayList localizacion() {
