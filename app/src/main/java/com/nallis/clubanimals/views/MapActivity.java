@@ -36,11 +36,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
     private LocationManager ubicacion;
 
+    private String nombre;
+
     DatabaseReference db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        nombre = getIntent().getStringExtra("nombrevet");
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -68,7 +72,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        String nombre = getIntent().getStringExtra("nombrevet");
+
         mMap = googleMap;
 
         db.child("Veterinaria").child(nombre).addValueEventListener(new ValueEventListener() {
@@ -76,7 +80,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
 
-                    String name = snapshot.child("nombrevet").getValue().toString();
+                    String name = snapshot.child("nombre").getValue().toString();
 
                     double lat = (double) snapshot.child("latitud").getValue();
                     double lon = (double) snapshot.child("longitud").getValue();
