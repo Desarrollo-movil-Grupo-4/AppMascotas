@@ -40,8 +40,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private double lat;
     private double lon;
 
-    DatabaseReference db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +47,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         nombre = getIntent().getStringExtra("nombrevet");
         lat = getIntent().getDoubleExtra("latitudVet",0);
         lon = getIntent().getDoubleExtra("longitudVet",0);
-
+        localizacion();
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -60,10 +58,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        db = FirebaseDatabase.getInstance().getReference();
 
         //localizarMovimientos();
-        localizacion();
+
     }
 
     /**
