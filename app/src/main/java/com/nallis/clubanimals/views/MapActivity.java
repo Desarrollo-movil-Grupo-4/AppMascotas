@@ -7,7 +7,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -17,11 +16,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.databinding.ActivityMapBinding;
 
@@ -40,8 +34,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private double lat;
     private double lon;
 
-    DatabaseReference db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +41,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         nombre = getIntent().getStringExtra("nombrevet");
         lat = getIntent().getDoubleExtra("latitudVet",0);
         lon = getIntent().getDoubleExtra("longitudVet",0);
+        localizacion();
 
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
@@ -60,10 +53,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        db = FirebaseDatabase.getInstance().getReference();
 
         //localizarMovimientos();
-        localizacion();
+
     }
 
     /**
