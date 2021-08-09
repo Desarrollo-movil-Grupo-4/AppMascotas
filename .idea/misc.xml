@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_inicio_view.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/activity_listado_veterinarias.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/activity_recuperar_contrasena_view.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_registroa.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/activity_serviciolocal.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/row_recycler.xml" value="0.11302083333333333" />

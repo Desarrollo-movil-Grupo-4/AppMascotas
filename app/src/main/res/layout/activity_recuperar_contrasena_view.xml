@@ -59,18 +59,5 @@
             android:textColor="@color/white"
             app:backgroundTint="#017F8D" />
 
-        <EditText
-            android:id="@+id/etxt_mensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="@string/etxt_mensaje"
-            android:textColor="@color/teal_700" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
