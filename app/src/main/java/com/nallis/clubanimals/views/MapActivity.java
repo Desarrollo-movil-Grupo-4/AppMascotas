@@ -46,6 +46,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         nombre = getIntent().getStringExtra("nombrevet");
 
+        localizacion();
+
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -58,7 +60,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         db = FirebaseDatabase.getInstance().getReference();
 
         //localizarMovimientos();
-        localizacion();
+
     }
 
     /**
@@ -92,6 +94,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                     LatLng positionUsuario = new LatLng( (double) local.get(0), (double) local.get(1));
                     mMap.addMarker(new MarkerOptions().position(positionUsuario).title("Tu ubicacion"));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 9));
+
                 }
             }
             @Override
