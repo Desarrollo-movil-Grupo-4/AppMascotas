@@ -8,21 +8,39 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
+import com.firebase.ui.auth.IdpResponse;
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nallis.clubanimals.R;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity {
+    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
+            new FirebaseAuthUIActivityResultContract(),
+            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
+                @Override
+                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
+                    onSignInResult(result);
+                }
+            });
+
     // Crear objetos
     private EditText nombreEditText;
     private EditText correoEditText;
@@ -31,7 +49,7 @@ public class RegistroActivity extends AppCompatActivity {
     Button registrarseBoton;
 
     private EditText nombre, correo, contrasena, confcontrasena;
-    private Button btn_registrar;
+    private Button btn_registrar, btn_google;
 
     //variables de datos a registrar
     private String name = "";
@@ -63,7 +81,13 @@ public class RegistroActivity extends AppCompatActivity {
         confcontrasena = (EditText) findViewById(R.id.txt_confirmar_contrasena);
 
         btn_registrar = findViewById(R.id.btn__registrarse);
-
+        btn_google = findViewById(R.id.btn_google);
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createSignInIntent();
+            }
+        });
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +107,38 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
     }
+
+        public void createSignInIntent() {
+            // [START auth_fui_create_intent]
+            // Choose authentication providers
+            List<AuthUI.IdpConfig> providers = Arrays.asList(
+                    new AuthUI.IdpConfig.GoogleBuilder().build()
+                    //,
+                   // new AuthUI.IdpConfig.FacebookBuilder().build()
+            );
+            Intent signInIntent = AuthUI.getInstance()
+                    .createSignInIntentBuilder()
+                    .setAvailableProviders(providers)
+                    .build();
+            signInLauncher.launch(signInIntent);
+        }
+
+        private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
+            IdpResponse response = result.getIdpResponse();
+            if (result.getResultCode() == RESULT_OK) {
+                // Successfully signed in
+                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                startActivity(new Intent(RegistroActivity.this, InicioActivityView.class));
+                finish();
+
+            } else {
+                // Sign in failed. If response is null the user canceled the
+                // sign-in flow using the back button. Otherwise check
+                // response.getError().getErrorCode() and handle the error.
+                // ...
+                Toast.makeText(RegistroActivity.this, "error"+ response.getError().getErrorCode(),Toast.LENGTH_SHORT).show();
+            }
+        }
         private void registrarUsuario(){
             auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override

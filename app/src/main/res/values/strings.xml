@@ -74,5 +74,8 @@
     //activity veterinaria
     <string name="nombre_vet">TINI-PET</string>
     <string name="title_activity_map">Map</string>
+    // Facebook
+    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
 
 </resources>
