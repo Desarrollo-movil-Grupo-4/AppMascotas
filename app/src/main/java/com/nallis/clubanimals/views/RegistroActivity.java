@@ -2,6 +2,7 @@ package com.nallis.clubanimals.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +18,18 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nallis.clubanimals.R;
@@ -32,15 +40,9 @@ import java.util.List;
 import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity {
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
-            new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
-                }
-            });
 
+    int RC_SIGN_IN = 1;
+    String TAG = "GoogleSignInLoginActivity";
     // Crear objetos
     private EditText nombreEditText;
     private EditText correoEditText;
@@ -63,10 +65,13 @@ public class RegistroActivity extends AppCompatActivity {
     FirebaseAuth auth;
     DatabaseReference db;
 
+    private GoogleSignInClient mGoogleSignInClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registroa);
+
 
 
         //instanciar firebase
@@ -82,12 +87,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         btn_registrar = findViewById(R.id.btn__registrarse);
         btn_google = findViewById(R.id.btn_google);
-        btn_google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createSignInIntent();
-            }
-        });
+
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,39 +106,63 @@ public class RegistroActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
     }
 
-        public void createSignInIntent() {
-            // [START auth_fui_create_intent]
-            // Choose authentication providers
-            List<AuthUI.IdpConfig> providers = Arrays.asList(
-                    new AuthUI.IdpConfig.GoogleBuilder().build()
-                    //,
-                   // new AuthUI.IdpConfig.FacebookBuilder().build()
-            );
-            Intent signInIntent = AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .build();
-            signInLauncher.launch(signInIntent);
+        private void signIn(){
+        Intent sigInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(sigInIntent, RC_SIGN_IN);
         }
-
-        private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
-            IdpResponse response = result.getIdpResponse();
-            if (result.getResultCode() == RESULT_OK) {
-                // Successfully signed in
-                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                startActivity(new Intent(RegistroActivity.this, InicioActivityView.class));
-                finish();
-
-            } else {
-                // Sign in failed. If response is null the user canceled the
-                // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
-                Toast.makeText(RegistroActivity.this, "error"+ response.getError().getErrorCode(),Toast.LENGTH_SHORT).show();
+        public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode == RC_SIGN_IN){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            if(task.isSuccessful()){
+                try {
+                    GoogleSignInAccount account = task.getResult(ApiException.class);
+                    Log.d(TAG, "firabaseAuthWithGoogle:"+ account.getId());
+                    firebaseAuthWithGoogle(account.getIdToken());
+                }catch (ApiException e){
+                    Log.w(TAG, "Google sign in failed",e);
+                }
+            }else{
+                Log.d(TAG, "Error, login no exitoso:"+ task.getException().toString());
+                Toast.makeText(this, "Ocurrio un error. "+ task.getException().toString(),
+                        Toast.LENGTH_SHORT).show();
             }
         }
+        }
+
+        private void firebaseAuthWithGoogle(String idToken){
+            AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
+            auth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Log.d(TAG,"signInWithCredential:success");
+
+                                Intent dashboardActivity = new Intent(RegistroActivity.this, InicioActivityView.class);
+                                startActivity((dashboardActivity));
+                                RegistroActivity.this.finish();
+
+                            }else{
+                                Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            }
+                        }
+                    });
+        }
+
         private void registrarUsuario(){
             auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -296,5 +320,15 @@ public class RegistroActivity extends AppCompatActivity {
             Toast mensaje = Toast.makeText(getApplicationContext(),"Por favor llenar todos los campos obligatorios",Toast.LENGTH_SHORT );
             mensaje.show();
         };
+    }
+
+    protected void onStart() {
+
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            Intent intent = new Intent(RegistroActivity.this, InicioActivityView.class);
+            startActivity(intent);
+        }
+        super.onStart();
     }
 }

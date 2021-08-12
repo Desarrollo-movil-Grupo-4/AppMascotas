@@ -15,6 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,9 +60,17 @@ public class InicioActivityView extends AppCompatActivity {
         btn_cerrarsesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                auth.signOut();
-                startActivity(new Intent(InicioActivityView.this, MainActivity.class));
-                finish();
+               // auth.signOut();
+                AuthUI.getInstance()
+                        .signOut(InicioActivityView.this)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            public void onComplete(@NonNull Task<Void> task) {
+                                // ...
+                                startActivity(new Intent(InicioActivityView.this, MainActivity.class));
+                                finish();
+                            }
+                        });
+
             }
         });
 
@@ -82,7 +93,7 @@ public class InicioActivityView extends AppCompatActivity {
             }
         });
 
-        infoUsuario();
+      //  infoUsuario();
         //metodo para cargar a la base de datos y la ubicacion
         localizacion();
     }
