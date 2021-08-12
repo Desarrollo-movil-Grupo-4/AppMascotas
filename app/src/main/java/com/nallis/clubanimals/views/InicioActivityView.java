@@ -19,6 +19,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,6 +50,7 @@ public class InicioActivityView extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
+        FirebaseUser currentUser = auth.getCurrentUser();
 
         btn_cerrarsesion = findViewById(R.id.btn_deslogueo);
         btn_consulta_general = findViewById(R.id.btn_consulta_general);
@@ -93,7 +95,7 @@ public class InicioActivityView extends AppCompatActivity {
             }
         });
 
-      //  infoUsuario();
+        infoUsuario();
         //metodo para cargar a la base de datos y la ubicacion
         localizacion();
     }

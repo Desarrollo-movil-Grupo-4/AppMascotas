@@ -1,6 +1,7 @@
 package com.nallis.clubanimals.views;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -151,6 +152,28 @@ public class RegistroActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Log.d(TAG,"signInWithCredential:success");
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                if (user != null) {
+                                    // Name, email address, and profile photo Url
+                                    String name = user.getDisplayName();
+                                    String email = user.getEmail();
+                                    Uri photoUrl = user.getPhotoUrl();
+
+                                    // The user's ID, unique to the Firebase project. Do NOT use this value to
+                                    // authenticate with your backend server, if you have one. Use
+                                    // FirebaseUser.getIdToken() instead.
+
+
+                                    Map<String, Object> map = new HashMap<>();
+                                    map.put( "name", name);
+                                    map.put( "email", email);
+                                    map.put("latitud", "");
+                                    map.put("longitud", "");
+
+                                    String id = auth.getCurrentUser().getUid();
+                                    db.child("Users").child(id).updateChildren(map);
+
+                                }
 
                                 Intent dashboardActivity = new Intent(RegistroActivity.this, InicioActivityView.class);
                                 startActivity((dashboardActivity));
