@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_contratar_view.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_inicio_view.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/activity_listado_veterinarias.xml" value="0.221875" />
         <entry key="app/src/main/res/layout/activity_recuperar_contrasena_view.xml" value="0.22864583333333333" />

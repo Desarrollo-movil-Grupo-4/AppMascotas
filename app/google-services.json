@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "2520483594-map4pnmtua63k73gvd16oum6a6pq7hpb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nallis.clubanimals",
+            "certificate_hash": "e72fcee552238d831977caca08010b73f074e032"
+          }
+        },
+        {
           "client_id": "2520483594-lsvnrmd6l3nj9prchskak6ltcucmir0i.apps.googleusercontent.com",
           "client_type": 3
         }

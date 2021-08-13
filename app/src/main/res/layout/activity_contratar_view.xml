@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/nom_masc"
+        android:id="@+id/et_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -64,7 +64,7 @@
         android:drawablePadding="12dp"/>
 
     <EditText
-        android:id="@+id/Mascota"
+        android:id="@+id/et_tipo_mascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
@@ -80,7 +80,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/nom_mascotas"
+        android:id="@+id/et_mensaje"
         android:layout_width="wrap_content"
         android:layout_height="182dp"
         android:layout_gravity="center"
@@ -94,7 +94,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/btn_enviar"
         android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
