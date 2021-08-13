@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -27,7 +29,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
 
+import java.io.IOException;
+import java.text.BreakIterator;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class InicioActivityView extends AppCompatActivity {
@@ -40,13 +46,16 @@ public class InicioActivityView extends AppCompatActivity {
     FirebaseAuth auth;
     DatabaseReference db;
     private TextView tv_result;
-
+    String direccion;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_view);
 
+        direccion = "";
+        name = "";
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
@@ -111,11 +120,28 @@ public class InicioActivityView extends AppCompatActivity {
         }
         Location location = ubicacion.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
+
+            //Obtener la direccion de la calle a partir de la latitud y la longitud
+            if (location.getLatitude() != 0.0 && location.getLongitude() != 0.0) {
+                try {
+                    Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+                    List<Address> list = geocoder.getFromLocation(
+                            location.getLatitude(), location.getLongitude(), 1);
+                    if (!list.isEmpty()) {
+                        Address DirCalle = list.get(0);
+                        direccion= DirCalle.getAddressLine(0);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
         if (location != null) {
 
             Map<String, Object> coordenadas = new HashMap<>();
             coordenadas.put("latitud", location.getLatitude());
             coordenadas.put("longitud", location.getLongitude());
+            coordenadas.put("localizacion", direccion);
 
             String id = auth.getCurrentUser().getUid();
             db.child("Users").child(id).updateChildren(coordenadas);

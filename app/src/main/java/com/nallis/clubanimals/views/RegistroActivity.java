@@ -165,10 +165,14 @@ public class RegistroActivity extends AppCompatActivity {
 
 
                                     Map<String, Object> map = new HashMap<>();
+                                    map.put( "photo", photoUrl);
                                     map.put( "name", name);
                                     map.put( "email", email);
                                     map.put("latitud", "");
                                     map.put("longitud", "");
+                                    map.put( "pass", "");
+                                    map.put("localizacion", "");
+                                    map.put("telefono", "");
 
                                     String id = auth.getCurrentUser().getUid();
                                     db.child("Users").child(id).updateChildren(map);
@@ -193,12 +197,14 @@ public class RegistroActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
 
                         Map<String, Object> map = new HashMap<>();
+                        map.put( "photo", "");
                         map.put( "name", name);
                         map.put( "email", email);
                         map.put( "pass", pass);
-                        map.put( "conpass", conpass);
                         map.put("latitud", "");
                         map.put("longitud", "");
+                        map.put("localizacion", "");
+                        map.put("telefono", "");
 
                         String id = auth.getCurrentUser().getUid();
 
