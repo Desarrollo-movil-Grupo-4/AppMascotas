@@ -7,11 +7,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ContratarActivityView extends AppCompatActivity {
 
@@ -22,6 +29,8 @@ public class ContratarActivityView extends AppCompatActivity {
     private String name = "";
     private String mascota = "";
     private String descipcion = "";
+
+    long maxid = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +43,19 @@ public class ContratarActivityView extends AppCompatActivity {
         mensaje = findViewById(R.id.et_mensaje);
 
         db = FirebaseDatabase.getInstance().getReference().child("Contratos");
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    maxid = snapshot.getChildrenCount();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         btn_contratar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +63,7 @@ public class ContratarActivityView extends AppCompatActivity {
                 name = nombreUsuario.getText().toString();
                 mascota = tipoMascota.getText().toString();
                 descipcion = mensaje.getText().toString();
+
                 if (!name.isEmpty() && !mascota.isEmpty() && !descipcion.isEmpty() ) {
                         registrarSolicitud();
                     } else {
@@ -54,6 +76,12 @@ public class ContratarActivityView extends AppCompatActivity {
 
     public void registrarSolicitud(){
 
+        Map<String, Object> map = new HashMap<>();
+        map.put( "nameVet", nameVet);
+        map.put( "name", name);
+        map.put( "tipo mascota", mascota);
+        map.put( "Mensaje", descipcion);
+        db.child(String.valueOf(maxid+1)).setValue(map);
     }
 
     /*llevar a resumen de contratacion*/
