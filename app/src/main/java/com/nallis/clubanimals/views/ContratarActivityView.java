@@ -82,11 +82,10 @@ public class ContratarActivityView extends AppCompatActivity {
         map.put( "tipo mascota", mascota);
         map.put( "Mensaje", descipcion);
         db.child(String.valueOf(maxid+1)).setValue(map);
+
+        Intent intent = new Intent( ContratarActivityView.this, ResumenContratarView.class);
+        startActivity(intent);
+        finish();
     }
 
-    /*llevar a resumen de contratacion*/
-    public void goToResummen(View view) {
-        Intent intent = new Intent( this, ResumenContratarView.class);
-        startActivity(intent);
-    }
 }
