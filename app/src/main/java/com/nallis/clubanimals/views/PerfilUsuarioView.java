@@ -6,10 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -42,6 +45,7 @@ public class PerfilUsuarioView extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
+
         tv_result = findViewById(R.id.txt_perfil_nombre);
         etxt_correo = findViewById(R.id.etxt_correo) ;
         etxt_telefono = findViewById(R.id.etxt_telefono);
@@ -51,13 +55,14 @@ public class PerfilUsuarioView extends AppCompatActivity {
         btn_cancelar = findViewById(R.id.btn_perfil_cancelar);
         btn_guardar = findViewById(R.id.btn_perfil_guardar);
 
-        btn_cancelar.setOnClickListener(new View.OnClickListener() {
+        infoUsuario();
+     /*   btn_cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PerfilUsuarioView.this, InicioActivityView.class));
                 finish();
             }
-        });
+        }); */
 
         btn_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +71,6 @@ public class PerfilUsuarioView extends AppCompatActivity {
             }
         });
 
-        infoUsuario();
     }
     private void infoUsuario(){
 
@@ -99,11 +103,23 @@ public class PerfilUsuarioView extends AppCompatActivity {
     public void actualizarPerfil(){
 
         Map<String, Object> map = new HashMap<>();
-        map.put("email", etxt_correo.getText());
-        map.put("telefono", etxt_telefono.getText());
+        map.put("name", tv_result.getText().toString());
+        map.put("email", etxt_correo.getText().toString());
+        map.put("telefono", etxt_telefono.getText().toString());
 
         String id = auth.getCurrentUser().getUid();
-        db.child("Users").child(id).updateChildren(map);
+        db.child("Users").child(id).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if(task.isSuccessful()){
+                    startActivity(new Intent(PerfilUsuarioView.this, InicioActivityView.class));
+                    finish();
+                }else{
+                    Toast.makeText(PerfilUsuarioView.this, "No se pudieron actualizar los datos correctamente", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
     public void goToInicio(View v){
             Intent intent = new Intent(this, InicioActivityView.class);

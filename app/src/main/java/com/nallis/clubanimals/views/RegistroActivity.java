@@ -157,15 +157,14 @@ public class RegistroActivity extends AppCompatActivity {
                                     // Name, email address, and profile photo Url
                                     String name = user.getDisplayName();
                                     String email = user.getEmail();
-                                    Uri photoUrl = user.getPhotoUrl();
+
 
                                     // The user's ID, unique to the Firebase project. Do NOT use this value to
                                     // authenticate with your backend server, if you have one. Use
                                     // FirebaseUser.getIdToken() instead.
 
-
                                     Map<String, Object> map = new HashMap<>();
-                                    map.put( "photo", photoUrl);
+                                    map.put( "photo", "");
                                     map.put( "name", name);
                                     map.put( "email", email);
                                     map.put("latitud", "");
@@ -175,13 +174,21 @@ public class RegistroActivity extends AppCompatActivity {
                                     map.put("telefono", "");
 
                                     String id = auth.getCurrentUser().getUid();
-                                    db.child("Users").child(id).updateChildren(map);
+
+                                    db.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task2) {
+
+                                            if(task2.isSuccessful()){
+                                                startActivity(new Intent(RegistroActivity.this, InicioActivityView.class));
+                                                finish();
+                                            }else{
+                                                Toast.makeText(RegistroActivity.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
 
                                 }
-
-                                Intent dashboardActivity = new Intent(RegistroActivity.this, InicioActivityView.class);
-                                startActivity((dashboardActivity));
-                                RegistroActivity.this.finish();
 
                             }else{
                                 Log.w(TAG, "signInWithCredential:failure", task.getException());
