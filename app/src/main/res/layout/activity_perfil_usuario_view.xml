@@ -35,8 +35,15 @@
                 android:textSize="8sp"
                 app:backgroundTint="#FF3D00" />
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/fredo_y_max"
+                tools:srcCompat="@tools:sample/avatars" />
 
-            <TextView
+     <!--      <TextView
                 android:id="@+id/imagen_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="104dp"
@@ -48,7 +55,7 @@
                 android:layout_weight="1"
                 android:padding="0dp"
                 app:drawableStartCompat="@drawable/ic_baseline_account_circle_80"
-                app:drawableTint="#009688" />
+                app:drawableTint="#009688" /> ! -->
 
             <Button
                 android:id="@+id/btn_perfil_guardar"
@@ -65,12 +72,6 @@
                 android:textSize="8sp"
                 app:backgroundTint="#69CF13" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
 
         </LinearLayout>
 

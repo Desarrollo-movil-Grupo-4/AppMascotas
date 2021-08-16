@@ -1,6 +1,7 @@
 package com.nallis.clubanimals.views;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,6 +44,9 @@ public class PerfilUsuarioView extends AppCompatActivity {
     private EditText tv_result;
     private EditText etxt_correo, etxt_telefono, etxt_localizacion, etxt_contrasena;
     private TextView foto_perfil;
+    private ImageView img_perfil;
+
+    private ProgressDialog dialog;
    // private ImageView foto_perfil;
     //private static final int GALERIA = 1;
 
@@ -67,9 +72,12 @@ public class PerfilUsuarioView extends AppCompatActivity {
         btn_cancelar = findViewById(R.id.btn_perfil_cancelar);
         btn_guardar = findViewById(R.id.btn_perfil_guardar);
 
-        foto_perfil = findViewById(R.id.imagen_perfil);
+        //foto_perfil = findViewById(R.id.imagen_perfil);
+        img_perfil = (ImageView) findViewById(R.id.imageView3);
 
-        foto_perfil.setOnClickListener(view -> fileUpload());
+        //foto_perfil.setOnClickListener(view -> fileUpload());
+        img_perfil.setOnClickListener(view -> fileUpload());
+        dialog = new ProgressDialog(this);
 
         infoUsuario();
         btn_cancelar.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +108,12 @@ public class PerfilUsuarioView extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == File){
             if(resultCode == RESULT_OK){
+
+                dialog.setTitle("Subiendo...");
+                dialog.setMessage("Subiendo foto");
+                dialog.setCancelable(false);
+                dialog.show();
+
                 Uri FileUri = data.getData();
                 StorageReference Folder = FirebaseStorage.getInstance().getReference().child("Users");
                 final StorageReference file_name = Folder.child("file"+FileUri.getLastPathSegment());
@@ -110,6 +124,8 @@ public class PerfilUsuarioView extends AppCompatActivity {
 
                     String id = auth.getCurrentUser().getUid();
                     db.child("Users").child(id).updateChildren(map);
+                    dialog.dismiss();
+                    String foto = String.valueOf(uri);
 
                 }));
             }
@@ -128,12 +144,17 @@ public class PerfilUsuarioView extends AppCompatActivity {
                     String localizacion = snapshot.child("localizacion").getValue().toString();
                     String contrasena = snapshot.child("pass").getValue().toString();
                     String telefono = snapshot.child("telefono").getValue().toString();
-
+                    String foto = snapshot.child("photo").getValue().toString();
                     tv_result.setText(name);
                     etxt_correo.setText(email);
                     etxt_telefono.setText(telefono);
                     etxt_localizacion.setText(localizacion);
                     etxt_contrasena.setText(contrasena);
+                    Glide.with(PerfilUsuarioView.this)
+                            .load(foto)
+                            .fitCenter()
+                            .centerCrop()
+                            .into(img_perfil);
                 }
             }
 

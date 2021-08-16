@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_80.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/layout/activity_contratar_view.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_inicio_view.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/activity_listado_veterinarias.xml" value="0.221875" />
