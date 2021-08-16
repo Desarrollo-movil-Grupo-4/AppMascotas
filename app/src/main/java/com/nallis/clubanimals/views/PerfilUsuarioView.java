@@ -1,14 +1,18 @@
 package com.nallis.clubanimals.views;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.nallis.clubanimals.R;
 
@@ -28,9 +33,16 @@ import java.util.Map;
 
 public class PerfilUsuarioView extends AppCompatActivity {
 
+
+
+    private static final int File = 1;
+
+
     private Button btn_img, btn_cancelar, btn_guardar;
     private EditText tv_result;
     private EditText etxt_correo, etxt_telefono, etxt_localizacion, etxt_contrasena;
+    private TextView foto_perfil;
+   // private ImageView foto_perfil;
     //private static final int GALERIA = 1;
 
     StorageReference stores;
@@ -55,14 +67,18 @@ public class PerfilUsuarioView extends AppCompatActivity {
         btn_cancelar = findViewById(R.id.btn_perfil_cancelar);
         btn_guardar = findViewById(R.id.btn_perfil_guardar);
 
+        foto_perfil = findViewById(R.id.imagen_perfil);
+
+        foto_perfil.setOnClickListener(view -> fileUpload());
+
         infoUsuario();
-     /*   btn_cancelar.setOnClickListener(new View.OnClickListener() {
+        btn_cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PerfilUsuarioView.this, InicioActivityView.class));
                 finish();
             }
-        }); */
+        });
 
         btn_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +88,34 @@ public class PerfilUsuarioView extends AppCompatActivity {
         });
 
     }
+
+    public void fileUpload(){
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        startActivityForResult(intent,File);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == File){
+            if(resultCode == RESULT_OK){
+                Uri FileUri = data.getData();
+                StorageReference Folder = FirebaseStorage.getInstance().getReference().child("Users");
+                final StorageReference file_name = Folder.child("file"+FileUri.getLastPathSegment());
+
+                file_name.putFile(FileUri).addOnCompleteListener(taskSnapshot -> file_name.getDownloadUrl().addOnSuccessListener(uri -> {
+                    HashMap<String, Object> map = new HashMap<>();
+                    map.put("photo", String.valueOf(uri));
+
+                    String id = auth.getCurrentUser().getUid();
+                    db.child("Users").child(id).updateChildren(map);
+
+                }));
+            }
+        }
+    }
+
     private void infoUsuario(){
 
         String id = auth.getCurrentUser().getUid();
