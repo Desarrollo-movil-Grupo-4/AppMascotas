@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4210C0E7"
+    android:background="@color/fondo_app"
     tools:context=".views.RegistroActivity">
 
     <LinearLayout
-        android:layout_width="331dp"
-        android:layout_height="616dp"
+        android:layout_width="336dp"
+        android:layout_height="670dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +27,18 @@
             android:textColor="#086791"
             android:textSize="48sp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imaView"
-            android:layout_width="87dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:src="@drawable/fredo_y_max"
+            app:civ_border_color="@color/color_primario"
+            app:civ_border_width="2dp" />
+
 
         <EditText
             android:id="@+id/txt_nombre"
@@ -96,7 +100,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="90dp"
             android:orientation="horizontal"
             android:paddingTop="10dp">
 
@@ -110,21 +114,21 @@
                 android:layout_weight="1"
                 android:background="@drawable/boton_redondo"
 
-                android:text="@string/btn_facebook"
+                android:drawableBottom="@drawable/face"
                 android:textColor="@color/white"
-                app:backgroundTint="#3D56E4" />
+                app:backgroundTint="@color/fui_transparent" />
 
             <Button
                 android:id="@+id/btn_google"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/boton_redondo"
-                android:text="@string/btn_google"
+                android:drawableBottom="@drawable/google__1_"
                 android:textColor="@color/white"
-                app:backgroundTint="#FF3D00" />
+                app:backgroundTint="@color/fui_transparent" />
         </LinearLayout>
 
         <LinearLayout

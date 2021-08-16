@@ -41,14 +41,15 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:background="@drawable/border_radius"
-        android:ems="10"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="12dp"
+        android:ems="10"
         android:fontFamily="sans-serif-light"
         android:hint="@string/text_email"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:textSize="24sp"
-        android:drawableLeft="@drawable/ic_baseline_email_24" />
+        android:shadowColor="#009688"
+        android:textSize="24sp" />
 
 
     <EditText
@@ -83,13 +84,21 @@
         app:backgroundTint="#4CAF50" />
 
     <TextView
+        android:id="@+id/noRegistrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal"
+        android:text="@string/no_registrado"
+        android:textColor="@color/color_primario"
+        android:textSize="24sp" />
+    <TextView
         android:id="@+id/nomVet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
         android:onClick="goToRegistrar"
         android:text="@string/text_resgistro"
-        android:textColor="@color/color_primario"
+        android:textColor="#051A8C"
         android:textSize="24sp" />
 
     <TextView
@@ -99,7 +108,7 @@
         android:gravity="center|center_horizontal"
         android:onClick="goToContrasena"
         android:text="@string/text_contraseña"
-        android:textColor="@color/color_primario"
+        android:textColor="#051A8C"
         android:textSize="24sp" />
 
 

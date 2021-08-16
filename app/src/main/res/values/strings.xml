@@ -54,8 +54,10 @@
     <string name="text_email">Email</string>
     <string name="num_password">Password</string>
     <string name="text_entrar">Entrar</string>
-    <string name="text_resgistro">¿Si aún no estás registrado? Registrarme</string>
-    <string name="text_contraseña">Olvide mi contraseña</string>
+
+    <string name="no_registrado">¿Si aún no estás registrado? </string>
+    <string name="text_resgistro">Registrarme </string>
+    <string name="text_contraseña">Olvidé mi contraseña </string>
     //string localización de un servicio
     <string name="Descservubicacion">Encuentra tu veterinaria más cercana de acuerdo con tu ubicación</string>
     <string name="nomservicio">SERVICIO</string>

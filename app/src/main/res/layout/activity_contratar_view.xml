@@ -54,14 +54,13 @@
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:background="@drawable/border_radius"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="12dp"
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:hint="@string/text_nombre"
-        android:inputType="textPersonName"
         android:padding="10dp"
-        android:textSize="24sp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawablePadding="12dp"/>
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/et_tipo_mascota"
@@ -72,11 +71,10 @@
         android:background="@drawable/border_radius"
         android:drawableLeft="@drawable/paw"
         android:drawablePadding="12dp"
+        android:drawableTint="#017F8D"
         android:ems="10"
         android:hint="@string/text_tipo_mascota"
-        android:inputType="textPassword"
         android:padding="10dp"
-        android:drawableTint="#017F8D"
         android:textSize="24sp" />
 
     <EditText
@@ -89,7 +87,6 @@
         android:fontFamily="sans-serif-light"
         android:gravity="left"
         android:hint="@string/text_mensaje"
-        android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="24sp" />
 
