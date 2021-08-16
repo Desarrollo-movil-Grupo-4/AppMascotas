@@ -35,13 +35,17 @@
                 android:textSize="8sp"
                 app:backgroundTint="#FF3D00" />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/fredo_y_max"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_margin="30dp"
+                android:src="@drawable/fredo_y_max"
+                app:civ_border_color="@color/color_primario"
+                app:civ_border_width="2dp" />
 
      <!--      <TextView
                 android:id="@+id/imagen_perfil"
