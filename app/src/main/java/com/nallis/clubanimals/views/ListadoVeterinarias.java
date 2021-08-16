@@ -1,15 +1,14 @@
 package com.nallis.clubanimals.views;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
@@ -25,7 +24,7 @@ public class ListadoVeterinarias extends AppCompatActivity {
     RecyclerView rv;
     List<Veterinaria> veterinarias;
     Adapter adapter;
-
+    InicioActivityView inicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,8 @@ public class ListadoVeterinarias extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         veterinarias = new ArrayList<>();
+
+        inicio = new InicioActivityView();
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -54,10 +55,24 @@ public class ListadoVeterinarias extends AppCompatActivity {
                         dataSnapshot.getChildren()) {
 
                     Veterinaria veterinaria = snapshot.getValue(Veterinaria.class);
-                    if(veterinaria.getS01().length() != 0){
 
-                    veterinarias.add(veterinaria);};
+                    String servicio = getIntent().getStringExtra("servicio");
 
+                    if (servicio.equals("s01")){
+                        if(veterinaria.getS01() .length() != 0){
+
+                            veterinarias.add(veterinaria);};
+
+                    }else if (servicio.equals("s02")){
+                        if(veterinaria.getS02().length() != 0){
+
+                            veterinarias.add(veterinaria);};
+
+                    }else if (servicio.equals("s03")){
+                        if(veterinaria.getS03().length() != 0){
+
+                            veterinarias.add(veterinaria);};
+                    }
 
                 }
                 adapter.notifyDataSetChanged();

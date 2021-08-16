@@ -1,8 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/fondo_app"
     android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primario"
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/fredo_y_max" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:id="@+id/textview_nombrevet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veterinaria"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textview_s01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/supporting_text"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textview_direccionvet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/secondary_text"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/perfil_veterinaria"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/border_radius"
+                    android:padding="10dp"
+                    android:text="Ver Perfil"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="#4CAF50" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="?attr/borderlessButtonStyle"
+                    android:id="@+id/btn_localizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_baseline_location_on_24"
+                    app:backgroundTint="@android:color/transparent" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="?attr/borderlessButtonStyle"
+                    android:id="@+id/btn_contratar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_radius"
+                    android:padding="10dp"
+                    android:text="Contratar"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="#4CAF50" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+    <com.google.android.material.card.MaterialCardView
+
+    android:clickable="true"
+    android:focusable="true"
+    android:checkable="true">
+
+
+
+</com.google.android.material.card.MaterialCardView>
+
 
     <TextView
         android:id="@+id/textview_nombrevet"
@@ -19,5 +138,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></TextView>
+        -->
 
 </LinearLayout>

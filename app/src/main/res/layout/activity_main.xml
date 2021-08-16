@@ -68,7 +68,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/btn_enviar"
         android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"

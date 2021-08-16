@@ -1,28 +1,49 @@
 package com.nallis.clubanimals.views;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
+import com.firebase.ui.auth.IdpResponse;
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nallis.clubanimals.R;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity {
+
+    int RC_SIGN_IN = 1;
+    String TAG = "GoogleSignInLoginActivity";
     // Crear objetos
     private EditText nombreEditText;
     private EditText correoEditText;
@@ -31,7 +52,7 @@ public class RegistroActivity extends AppCompatActivity {
     Button registrarseBoton;
 
     private EditText nombre, correo, contrasena, confcontrasena;
-    private Button btn_registrar;
+    private Button btn_registrar, btn_google;
 
     //variables de datos a registrar
     private String name = "";
@@ -39,14 +60,19 @@ public class RegistroActivity extends AppCompatActivity {
     private String pass = "";
     private String conpass = "";
 
+
+
     //firebase
     FirebaseAuth auth;
     DatabaseReference db;
+
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registroa);
+
 
 
         //instanciar firebase
@@ -59,7 +85,9 @@ public class RegistroActivity extends AppCompatActivity {
         correo = (EditText) findViewById(R.id.txt_correo);
         contrasena = (EditText) findViewById(R.id.txt_contrasena);
         confcontrasena = (EditText) findViewById(R.id.txt_confirmar_contrasena);
+
         btn_registrar = findViewById(R.id.btn__registrarse);
+        btn_google = findViewById(R.id.btn_google);
 
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +107,96 @@ public class RegistroActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
     }
+
+        private void signIn(){
+        Intent sigInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(sigInIntent, RC_SIGN_IN);
+        }
+        public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode == RC_SIGN_IN){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            if(task.isSuccessful()){
+                try {
+                    GoogleSignInAccount account = task.getResult(ApiException.class);
+                    Log.d(TAG, "firabaseAuthWithGoogle:"+ account.getId());
+                    firebaseAuthWithGoogle(account.getIdToken());
+                }catch (ApiException e){
+                    Log.w(TAG, "Google sign in failed",e);
+                }
+            }else{
+                Log.d(TAG, "Error, login no exitoso:"+ task.getException().toString());
+                Toast.makeText(this, "Ocurrio un error. "+ task.getException().toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+        }
+
+        private void firebaseAuthWithGoogle(String idToken){
+            AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
+            auth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Log.d(TAG,"signInWithCredential:success");
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                if (user != null) {
+                                    // Name, email address, and profile photo Url
+                                    String name = user.getDisplayName();
+                                    String email = user.getEmail();
+
+
+                                    // The user's ID, unique to the Firebase project. Do NOT use this value to
+                                    // authenticate with your backend server, if you have one. Use
+                                    // FirebaseUser.getIdToken() instead.
+
+                                    Map<String, Object> map = new HashMap<>();
+                                    map.put( "photo", "");
+                                    map.put( "name", name);
+                                    map.put( "email", email);
+                                    map.put("latitud", "");
+                                    map.put("longitud", "");
+                                    map.put( "pass", "");
+                                    map.put("localizacion", "");
+                                    map.put("telefono", "");
+
+                                    String id = auth.getCurrentUser().getUid();
+
+                                    db.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task2) {
+
+                                            if(task2.isSuccessful()){
+                                                startActivity(new Intent(RegistroActivity.this, InicioActivityView.class));
+                                                finish();
+                                            }else{
+                                                Toast.makeText(RegistroActivity.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+
+                                }
+
+                            }else{
+                                Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            }
+                        }
+                    });
+        }
+
         private void registrarUsuario(){
             auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -87,10 +204,14 @@ public class RegistroActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
 
                         Map<String, Object> map = new HashMap<>();
+                        map.put( "photo", "");
                         map.put( "name", name);
                         map.put( "email", email);
                         map.put( "pass", pass);
-                        map.put( "conpass", conpass);
+                        map.put("latitud", "");
+                        map.put("longitud", "");
+                        map.put("localizacion", "");
+                        map.put("telefono", "");
 
                         String id = auth.getCurrentUser().getUid();
 
@@ -235,5 +356,15 @@ public class RegistroActivity extends AppCompatActivity {
             Toast mensaje = Toast.makeText(getApplicationContext(),"Por favor llenar todos los campos obligatorios",Toast.LENGTH_SHORT );
             mensaje.show();
         };
+    }
+
+    protected void onStart() {
+
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            Intent intent = new Intent(RegistroActivity.this, InicioActivityView.class);
+            startActivity(intent);
+        }
+        super.onStart();
     }
 }
