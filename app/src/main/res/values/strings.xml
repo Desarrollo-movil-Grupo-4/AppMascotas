@@ -38,7 +38,7 @@
     <string name="mascota_text">Tipo mascota y nombre</string>
     <string name="action_1">Finalizar transacción</string>
     <string name="action_2">Cerrar</string>
-    <string name="tv_titulo_confirmacion">Enhorabuena, Nombre!</string>
+    <string name="tv_titulo_confirmacion">Enhorabuena!</string>
     <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada con éxito</string>
     //string de contratar
     <string name="text_nom_vet">Nombre de la veterinaria</string>

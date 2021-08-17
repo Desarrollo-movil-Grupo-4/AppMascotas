@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_account_circle_80.xml" value="0.21574074074074073" />
+        <entry key="app/src/main/res/drawable/text_redondo.xml" value="0.21574074074074073" />
         <entry key="app/src/main/res/layout/activity_contratar_view.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_inicio_view.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/activity_listado_veterinarias.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_perfil_usuario_view.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_recuperar_contrasena_view.xml" value="0.22864583333333333" />
-        <entry key="app/src/main/res/layout/activity_registroa.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/activity_registroa.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_resumen_contratar_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_serviciolocal.xml" value="0.11302083333333333" />
         <entry key="app/src/main/res/layout/row_recycler.xml" value="0.11302083333333333" />
       </map>

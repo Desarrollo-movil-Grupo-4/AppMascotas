@@ -27,6 +27,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         Context context;
         double latitud;
         double longitud;
+        String whatsapp;
+        String correo;
         // Creacion de objetos que muestra la tarjeta
         TextView textViewNombreVet, textViewDireccionVet, textViewS01;
         Button btnPerfil, btnLocalizacion, btnContratar;
@@ -66,6 +68,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
                     break;
                 case R.id.btn_contratar:
                     Intent intent = new Intent(context, ContratarActivityView.class);
+                    intent.putExtra("nombrevet",textViewNombreVet.getText());
+                    intent.putExtra("direccionVet",textViewDireccionVet.getText());
+                    intent.putExtra("whatsappVet",whatsapp);
+                    intent.putExtra("correoVet",correo);
                     context.startActivity(intent);
                     break;
             }
@@ -88,6 +94,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             Veterinaria veterinaria = veterinarias.get(position);
             holder.latitud = veterinaria.getLatitud();
             holder.longitud = veterinaria.getLongitud();
+            holder.whatsapp = veterinaria.getWhatsapp();
+            holder.correo = veterinaria.getCorreo();
             holder.textViewNombreVet.setText(veterinaria.getNombre());
             holder.textViewDireccionVet.setText(veterinaria.getDireccion());
             //holder.textViewS01.setText(nombreServicio);

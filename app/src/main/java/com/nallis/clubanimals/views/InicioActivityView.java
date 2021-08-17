@@ -149,7 +149,7 @@ public class InicioActivityView extends AppCompatActivity {
 
     }
 
-    private void infoUsuario(){
+    public void infoUsuario(){
 
         String id = auth.getCurrentUser().getUid();
         db.child("Users").child(id).addValueEventListener(new ValueEventListener() {
@@ -160,7 +160,7 @@ public class InicioActivityView extends AppCompatActivity {
                     //String email = snapshot.child("name").getValue().toString();
 
                     tv_result.setText(name);
-                }
+                };
             }
 
             @Override
@@ -169,6 +169,8 @@ public class InicioActivityView extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void goToListado(View view, String idServicio){
         //Intent intent = new Intent(this, VeterinariaActivity.class);

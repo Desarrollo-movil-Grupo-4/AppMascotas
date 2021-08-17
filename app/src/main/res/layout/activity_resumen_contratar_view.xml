@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6110C0E7"
+    android:background="@drawable/boton_redondo"
     android:onClick="goToContratar"
     tools:context=".views.ResumenContratarView">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/fondo_app"
         android:onClick="goToContratar"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="320dp"
-        >
+        tools:layout_editor_absoluteY="320dp">
 
         <TextView
             android:id="@+id/tv_titulo_confirmacion"
@@ -25,7 +25,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
             android:text="@string/tv_titulo_confirmacion"
-            android:textColor="#009688"
+            android:textColor="@color/color_primario"
             android:textSize="30sp" />
 
         <TextView
@@ -35,39 +35,70 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/tv_mensaje_confirmacion"
-            android:textColor="#009688"
+            android:textColor="@android:color/black"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="547dp"
             android:background="@color/white"
             android:orientation="vertical">
 
             <!-- Media -->
-
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="194dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/perro" />
+                android:id="@+id/vet_imagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:src="@drawable/perro" />
 
             <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="202dp"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/border_radius"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/mascota_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/mascota_text"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/color_primario"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/mascota_text4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/mascota_text"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="20sp" />
+
+                <TextView
                     android:id="@+id/veterinaria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp "
                     android:text="@string/veterinaria"
                     android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/color_primario"
                     android:textSize="24sp" />
 
                 <TextView
@@ -84,18 +115,8 @@
                     android:id="@+id/supporting_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/supporting_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/mascota_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/mascota_text"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="20sp" />
@@ -113,30 +134,23 @@
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
+                    android:background="@drawable/boton_redondo"
                     android:onClick="goToInicio"
                     android:text="@string/action_1"
-                    android:textColor="#009688"
-                    android:textStyle="bold" />
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/color_primario" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/action_2"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="goToInicio"
-                    android:text="@string/action_2"
-                    android:textColor="#009688"
-                    android:textColorHighlight="#009688"
-                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnAtrasdos"
-            android:layout_width="wrap_content"
+            android:layout_width="67dp"
             android:layout_height="58dp"
-            android:layout_margin="30dp"
+            android:layout_margin="5dp"
             android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
             android:onClick="goToContratar"
             app:backgroundTint="@color/white"
