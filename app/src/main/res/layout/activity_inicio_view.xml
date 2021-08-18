@@ -29,21 +29,6 @@
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="60dp" />
 
-    <TextView
-        android:id="@+id/buscar"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:width="50dp"
-        android:height="50dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/ic_baseline_search_24"
-        android:gravity="left"
-        android:padding="10dp"
-        android:text="Buscar"
-        android:textSize="24sp" />
-
     <Button
         android:id="@+id/btn_consulta_general"
         android:layout_width="match_parent"
