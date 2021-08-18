@@ -62,6 +62,7 @@
     <string name="Descservubicacion">Encuentra tu veterinaria más cercana de acuerdo con tu ubicación</string>
     <string name="nomservicio">SERVICIO</string>
     <string name="sertovet">IR</string>
+
     //inico
     <string name="txt_guarderia">Guardería</string>
     <string name="txt_general">Consulta General</string>
@@ -69,15 +70,34 @@
     <string name="txt_cirugia">Cirugía</string>
     <string name="txt_aseo">Baño y peluquería</string>
     <string name="txt_rayos">Rayos X</string>
+    <string name="txt_vacunacion">Vacunación</string>
+    <string name="txt_venta">Venta de Mascotas</string>
+    <string name="txt_esterilizacion">Esterilización</string>
+    <string name="txt_hospitalizacion">Hospitalización</string>
+    <string name="txt_laboratorio">Laboratorio</string>
+    <string name="txt_tienda">Tienda y Juguetería</string>
     <string name="txt_perfil">Nombre usuario</string>
     //activity ubicacion
     <string name="txt_usuario">Cuenta Usuario</string>
     <string name="txt_servicio">Servicios</string>
-    //activity veterinaria
-    <string name="nombre_vet">TINI-PET</string>
     <string name="title_activity_map">Map</string>
+
+    //activity veterinaria
+    <string name="Descrip">DESCRIPCION</string>
+    <string name="descvet1">Veterinaria en el sur de la ciudad con modernas instalaciones y personal altamente califificado,
+         estamos  especializados en caninos, felinos y aves, contamos con  más de  20 años de servivio a la comunidad. visitanos para
+    tener el gusto de prestarle un ecxelente servicio a tu mascota</string>
+    <string name="servet1">SERVICIOS</string>
+    <string name="instalciones1">Parqueadero, Zona Wifi, aire acondicionado, Sala de espera, Domicilios, Todas las formas de pago</string>
+    <string name="opnion1">Buen servicio, muy recomendado, buen trato con los animales</string>
+    <string name="text_direccionvet">Calle siempre viva</string>
+    <string name="precioconsgral">PRECIO:</string>
+    <string name="nomvet">VETERINARIOS S.A</string>btncontra
+    <string name="btncontra">CONTRATAR SERVICIOS</string>
+
     // Facebook
     <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
+    <string name="listadovet">LISTADO DE VETERINARIAS QUE PRESTAN EL SERVICIO DE</string>
 
 </resources>
