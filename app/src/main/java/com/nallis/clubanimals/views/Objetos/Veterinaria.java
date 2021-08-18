@@ -10,6 +10,7 @@ public class Veterinaria {
     String correo;
     double latitud;
     double longitud;
+    String foto;
 
     public Veterinaria(){
     }
@@ -21,7 +22,8 @@ public class Veterinaria {
             , double latitud
             , double longitud
             , String whatsapp
-            , String correo){
+            , String correo
+            , String foto){
         this.nombre = nombre;
         this.direccion = direccion;
         this.s01 = s01;
@@ -31,6 +33,7 @@ public class Veterinaria {
         this.longitud = longitud;
         this.whatsapp = whatsapp;
         this.correo = correo;
+        this.correo = foto;
     }
     public String getNombre(){
         return nombre;
@@ -44,9 +47,7 @@ public class Veterinaria {
     public void setDireccion(String direccion){
         this.direccion = direccion;
     }
-    public String getS01(){
-        return s01;
-    }
+    public String getS01(){ return s01; }
     public void setS01(String s01){
         this.s01 = s01;
     }
@@ -83,5 +84,9 @@ public class Veterinaria {
     public String getCorreo(){ return correo;}
     public void setCorreo(String correo){
         this.correo = correo;
+    }
+    public String getFoto(){ return foto;}
+    public void setFoto(String foto){
+        this.foto = foto;
     }
 }

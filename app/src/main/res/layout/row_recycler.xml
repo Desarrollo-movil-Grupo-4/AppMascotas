@@ -20,6 +20,7 @@
 
             <!-- Media -->
             <ImageView
+                android:id="@+id/fotoVet"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
                 android:scaleType="fitCenter"
@@ -40,31 +41,31 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/textview_s01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/supporting_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="20sp" />
+                <!--    <TextView
+                        android:id="@+id/textview_s01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/supporting_text"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="20sp" />  -->
 
-                <TextView
-                    android:id="@+id/textview_direccionvet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/secondary_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/textview_direccionvet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/secondary_text"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
 
-            </LinearLayout>
+                </LinearLayout>
 
-            <!-- Buttons -->
+                <!-- Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

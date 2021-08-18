@@ -164,7 +164,7 @@ public class RegistroActivity extends AppCompatActivity {
                                     // FirebaseUser.getIdToken() instead.
 
                                     Map<String, Object> map = new HashMap<>();
-                                    map.put( "photo", "");
+                                    map.put( "photo", "https://firebasestorage.googleapis.com/v0/b/appmascotas-d6db5.appspot.com/o/fotos%2Fusuario.png?alt=media&token=d980efe3-60e3-4e42-99c7-72b1342c40ed");
                                     map.put( "name", name);
                                     map.put( "email", email);
                                     map.put("latitud", "");

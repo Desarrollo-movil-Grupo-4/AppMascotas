@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -39,14 +40,21 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private String nombre;
     private double lat;
     private double lon;
+    TextView tv_nombreVet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         nombre = getIntent().getStringExtra("nombrevet");
         lat = getIntent().getDoubleExtra("latitudVet",0);
         lon = getIntent().getDoubleExtra("longitudVet",0);
+
+        tv_nombreVet = findViewById(R.id.txt_map);
+
+        tv_nombreVet.setText(nombre);
+
         localizacion();
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());

@@ -20,6 +20,6 @@
         android:id="@+id/txt_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Veterinaria"/>
+        android:text="Veterinaria" />
 
 </RelativeLayout>

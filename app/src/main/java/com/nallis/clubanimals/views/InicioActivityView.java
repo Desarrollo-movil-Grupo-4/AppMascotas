@@ -88,19 +88,19 @@ public class InicioActivityView extends AppCompatActivity {
         btn_consulta_general.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s01");
+                goToListado(view, "s01", "Consulta General");
             }
         });
         btn_odontologia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s02");
+                goToListado(view, "s02", "Odontología");
             }
         });
         btn_cirugia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s03");
+                goToListado(view, "s03", "Cirugía");
             }
         });
 
@@ -172,10 +172,11 @@ public class InicioActivityView extends AppCompatActivity {
 
 
 
-    public void goToListado(View view, String idServicio){
+    public void goToListado(View view, String idServicio, String Servicio){
         //Intent intent = new Intent(this, VeterinariaActivity.class);
         Intent intent = new Intent(this, ListadoVeterinarias.class);
         intent.putExtra("servicio", idServicio);
+        intent.putExtra("nombreServicio", Servicio);
         startActivity(intent);
     }
 
