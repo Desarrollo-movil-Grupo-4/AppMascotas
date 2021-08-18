@@ -4,309 +4,355 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo_app">
+    android:background="@color/color_primario"
+    tools:context=".tienda4">
 
-    <TextView
-        android:id="@+id/infoVacunacion"
-        android:layout_width="169dp"
-        android:layout_height="64dp"
-        android:layout_below="@+id/image"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="216dp"
-        android:layout_marginLeft="216dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:onClick="goToContratar"
-        android:text="Vacunacion                        Descripcion                         precio"
-        android:textColor="#009688"
-        android:textColorHighlight="#3F51B5"
-        android:textStyle="bold" />
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        app:srcCompat="@drawable/perro" />
 
-    <TextView
-        android:id="@+id/infoGeneral"
-        android:layout_width="169dp"
-        android:layout_height="64dp"
-        android:layout_below="@+id/image"
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="44dp"
+        android:layout_height="37dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="213dp"
-        android:layout_marginLeft="213dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:onClick="goToContratar"
-        android:text="Medicina General                        Descripcion                         precio"
-        android:textColor="@color/color_primario"
-        android:textColorHighlight="#3F51B5"
-        android:textStyle="bold" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_import_outline" />
 
     <TextView
-        android:id="@+id/infoGuarderia"
-        android:layout_width="169dp"
-        android:layout_height="64dp"
-        android:layout_below="@+id/image"
+        android:id="@+id/nomvet"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginRight="220dp"
-        android:onClick="goToContratar"
-        android:text="Guarderia                        Descripcion                         precio"
-        android:textColor="@color/color_primario"
-        android:textColorHighlight="#3F51B5"
-        android:textStyle="bold" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/nomvet"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/encabezado"
-        android:layout_width="416dp"
-        android:layout_height="97dp"
-        android:background="@color/color_primario"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="-3dp" />
-
-    <TextView
-
-        android:id="@+id/nombre_vet"
-        android:layout_width="109dp"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@+id/encabezado"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="575dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginRight="280dp"
-        android:layout_marginBottom="38dp"
-        android:text="@string/nombre_vet"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="97dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:padding="8dp"
-        android:src="@drawable/perro"
-        app:civ_border_color="@color/color_primario"
-        app:civ_border_width="2dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageView
-               
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
 
-        android:id="@+id/image"
-        android:layout_width="175dp"
-        android:layout_height="126dp"
-        android:layout_below="@+id/encabezado"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="219dp"
-        android:layout_marginRight="219dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/cirugia" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"></androidx.recyclerview.widget.RecyclerView>
 
-    <ImageView
-        android:id="@+id/imageGeneral"
-        android:layout_width="175dp"
-        android:layout_height="126dp"
-        android:layout_below="@+id/encabezado"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/general" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Descrip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_primario"
+                        android:text="@string/Descrip"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/descvet1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_primario"
+                        android:gravity="fill_horizontal|center_vertical"
+                        android:hint="@string/descvet1"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <TextView
+                android:id="@+id/servet1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_primario"
+                android:text="@string/servet1"
+                android:textColor="#F3EDED"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_primario"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp">
+
+            </ListView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <Button
+                android:id="@+id/btncontra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
 
 
-        android:id="@+id/imageGuarderia"
-        android:layout_width="175dp"
-        android:layout_height="126dp"
-        android:layout_below="@+id/infoCirugia"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="221dp"
-        android:layout_marginRight="221dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/guarderia" />
+                android:onClick="goToContratar "
+                android:text="@string/btncontra"
+                android:textColor="@color/black"
+                app:backgroundTint="#B5B0B0" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/insta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_primario"
+                        android:text="INSTALACIONES"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/instalaciones1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_primario"
+                        android:hint="@string/instalciones1"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="19sp" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_primario"
+                tools:layout_editor_absoluteX="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtopinones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_primario"
+                        android:text="OPINIONES"
+                        android:textColor="#F6F4F4"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/opinio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_primario"
+                        android:hint="@string/opnion1"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="19sp"
+                        tools:layout_editor_absoluteX="205dp"
+                        tools:layout_editor_absoluteY="177dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="5dp" />
 
     <TextView
-        android:id="@+id/footer"
-        android:layout_width="416dp"
-        android:layout_height="115dp"
-        android:layout_below="@+id/imageGuarderia"
+        android:id="@+id/textcorreo"
+        android:layout_width="195dp"
+        android:layout_height="26dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginLeft="-1dp"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="-4dp"
-        android:layout_marginRight="-4dp"
-        android:layout_marginBottom="-3dp"
-        android:background="@color/color_primario" />
-
-
-    <EditText
-        android:id="@+id/correo"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageGuarderia"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="206dp"
-        android:layout_marginLeft="206dp"
-        android:layout_marginTop="119dp"
-        android:layout_marginEnd="-5dp"
-        android:layout_marginRight="-5dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
+        android:layout_marginBottom="59dp"
         android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:inputType="textLongMessage|phone"
-        android:text="correo@correo.com"
+
+        android:text="Correo@correo.com"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        app:drawableTint="@color/white" />
-
-    <EditText
-
-        android:id="@+id/telefono_vet"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageGuarderia"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="212dp"
-        android:layout_marginRight="212dp"
-        android:layout_marginBottom="26dp"
-        android:backgroundTint="@android:color/transparent"
-        android:drawableLeft="@drawable/ic_baseline_phone_in_talk_24"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:inputType="textLongMessage|phone"
-        android:text="@string/num_telefono"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <EditText
-
-        android:id="@+id/direccion_vet"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageGuarderia"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="213dp"
-        android:layout_marginRight="213dp"
-        android:layout_marginBottom="72dp"
-        android:backgroundTint="@android:color/transparent"
-        android:drawableLeft="@drawable/ic_baseline_location_on_24"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:inputType="textLongMessage|phone"
-        android:text="@string/text_direccion"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/socialTienda"
-        android:layout_width="162dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/imageGuarderia"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="229dp"
-        android:layout_marginLeft="229dp"
-        android:layout_marginTop="162dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@android:color/transparent"
-        android:drawableLeft="@drawable/facebook__1_"
-        android:drawableRight="@drawable/google__1_"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:inputType="phone" />
+        android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/infoCirugia"
-        android:layout_width="169dp"
-        android:layout_height="64dp"
-        android:layout_below="@+id/image"
+        android:id="@+id/txtdireccion"
+        android:layout_width="196dp"
+        android:layout_height="26dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="214dp"
-        android:layout_marginRight="214dp"
-        android:onClick="goToContratar"
-        android:text="Cirugia                        Descripcion                         precio"
-        android:textColor="@color/color_primario"
-        android:textColorHighlight="#3F51B5"
-        android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginBottom="21dp"
+        android:background="@color/color_primario"
+        android:drawableLeft="@drawable/locationblanco"
+        android:text="Avenida simpre viva # 45"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/txttelefonovet"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="59dp"
+        android:drawableLeft="@drawable/ic_baseline_phone_in_talk_24"
+        android:text="555444333"
+        android:textColor="@color/white"
+        android:textSize="17dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="38dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        android:layout_marginBottom="14dp"
+        app:srcCompat="@drawable/facebook__1_" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="175dp"
-        android:layout_height="126dp"
-        android:layout_below="@+id/infoGeneral"
+        android:layout_width="47dp"
+        android:layout_height="39dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/vacunacion" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/insta" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="12dp"
+        app:srcCompat="@drawable/website" />
+
 
 </RelativeLayout>
