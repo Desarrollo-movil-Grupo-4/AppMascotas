@@ -22,8 +22,8 @@
             <ImageView
                 android:id="@+id/fotoVet"
                 android:layout_width="match_parent"
-                android:layout_height="194dp"
-                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/fredo_y_max" />
 
             <LinearLayout

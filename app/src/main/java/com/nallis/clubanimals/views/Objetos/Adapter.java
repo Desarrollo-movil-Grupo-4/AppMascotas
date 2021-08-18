@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.views.ContratarActivityView;
-import com.nallis.clubanimals.views.ListadoVeterinarias;
 import com.nallis.clubanimals.views.MapActivity;
-import com.nallis.clubanimals.views.PerfilUsuarioView;
 
 import java.util.List;
 
@@ -113,7 +110,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             Glide.with(holder.fotoVet)
                     .load(holder.foto)
                     .fitCenter()
-                    .centerCrop()
+                    //.centerCrop()
                     .into(holder.fotoVet);
 
         }
