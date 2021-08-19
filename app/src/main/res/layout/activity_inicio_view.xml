@@ -35,7 +35,12 @@
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="60dp" />
 
+
     <ScrollView
+
+    <Button
+        android:id="@+id/btn_consulta_general"
+
         android:layout_width="match_parent"
         android:layout_height="578dp"
         android:background="@color/fondo_app">

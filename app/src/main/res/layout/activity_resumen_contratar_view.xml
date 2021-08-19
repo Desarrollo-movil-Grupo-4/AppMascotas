@@ -49,8 +49,8 @@
             <!-- Media -->
             <ImageView
                 android:id="@+id/vet_imagen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="198dp"
+                android:layout_height="133dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center"
@@ -59,7 +59,7 @@
             <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="321dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
@@ -106,6 +106,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/pin"
+                    android:drawablePadding="10dp"
                     android:text="@string/secondary_text"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
@@ -116,7 +118,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/supporting_text"
+                    android:drawableLeft="@drawable/whatsapp"
+                    android:drawablePadding="10dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="20sp" />

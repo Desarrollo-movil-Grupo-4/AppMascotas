@@ -74,8 +74,10 @@
             android:background="@drawable/text_redondo"
             android:ems="10"
             android:hint="@string/txt_contrasena"
-            android:inputType="textPersonName"
-            android:padding="10dp" />
+            android:padding="10dp"
+
+            />
+
 
         <EditText
             android:id="@+id/txt_confirmar_contrasena"

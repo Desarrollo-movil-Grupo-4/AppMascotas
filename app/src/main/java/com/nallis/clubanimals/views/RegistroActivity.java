@@ -5,9 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -119,6 +122,51 @@ public class RegistroActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
+
+        // Escucha del evento Enter en nombre y se lanza a la funcion de comprobar Nombre
+        nombre.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event){
+                if (actionId == EditorInfo.IME_NULL){
+                    comprobarNombre();
+                    return true;
+                }return false;
+            }
+        });
+        // Escucha del evento Enter en correo y se lanza a la funcion de comprobar correo
+
+        correo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_NULL){
+                    comprobarCorreo();
+                    return true;
+                }return false;
+            }
+        });
+
+        // Escucha del evento Enter en contrasena y se lanza a la funcion de comprobar contrasena
+        contrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_NULL){
+                    comprobarContrasena();
+                    return true;
+                }return false;
+            }
+        });
+
+        // Escucha del evento Enter en confirmar contrasena y se lanza a la funcion de comprobar confirmar contrasena
+        confcontrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_NULL){
+                    confirmarContrasena();
+                    return true;
+                }return false;
+            }
+        });
+
     }
 
         private void signIn(){
@@ -164,7 +212,7 @@ public class RegistroActivity extends AppCompatActivity {
                                     // FirebaseUser.getIdToken() instead.
 
                                     Map<String, Object> map = new HashMap<>();
-                                    map.put( "photo", "");
+                                    map.put( "photo", "https://firebasestorage.googleapis.com/v0/b/appmascotas-d6db5.appspot.com/o/fotos%2Fusuario.png?alt=media&token=d980efe3-60e3-4e42-99c7-72b1342c40ed");
                                     map.put( "name", name);
                                     map.put( "email", email);
                                     map.put("latitud", "");
@@ -204,7 +252,7 @@ public class RegistroActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
 
                         Map<String, Object> map = new HashMap<>();
-                        map.put( "photo", "");
+                        map.put( "photo", "https://firebasestorage.googleapis.com/v0/b/appmascotas-d6db5.appspot.com/o/fotos%2Fusuario.png?alt=media&token=d980efe3-60e3-4e42-99c7-72b1342c40ed");
                         map.put( "name", name);
                         map.put( "email", email);
                         map.put( "pass", pass);
@@ -235,53 +283,7 @@ public class RegistroActivity extends AppCompatActivity {
             });
         }
 
-        // Escucha del evento Enter en nombre y se lanza a la funcion de comprobar Nombre
-/*
-        nombre.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-        @Override
-        public boolean onEditorAction(TextView v, int actionId, KeyEvent event){
-            if (actionId == EditorInfo.IME_NULL){
-                comprobarNombre();
-                return true;
-            }return false;
-        }
-    });
 
-        // Escucha del evento Enter en correo y se lanza a la funcion de comprobar correo
-
-        correo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_NULL){
-                    comprobarCorreo();
-                    return true;
-                }return false;
-            }
-        });
-
-        // Escucha del evento Enter en contrasena y se lanza a la funcion de comprobar contrasena
-        contrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_NULL){
-                    comprobarContrasena();
-                    return true;
-                }return false;
-            }
-        });
-
-        // Escucha del evento Enter en confirmar contrasena y se lanza a la funcion de comprobar confirmar contrasena
-        confcontrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_NULL){
-                    confirmarContrasena();
-                    return true;
-                }return false;
-            }
-        });
-
-*/
 
     // metodo para combrobar Nombre
     public boolean comprobarNombre(){
