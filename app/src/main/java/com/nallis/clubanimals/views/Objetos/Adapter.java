@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.views.ContratarActivityView;
 import com.nallis.clubanimals.views.MapActivity;
+import com.nallis.clubanimals.views.VeterinariaActivity;
 
 import java.util.List;
 
@@ -43,8 +44,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             // conexion con la vista
             textViewNombreVet = itemView.findViewById(R.id.textview_nombrevet);
             textViewDireccionVet = itemView.findViewById(R.id.textview_direccionvet);
+
            // textViewS01 = itemView.findViewById(R.id.textview_s01);
             btnPerfil = itemView.findViewById(R.id.perfil_veterinaria);
+
             btnLocalizacion = itemView.findViewById(R.id.btn_localizar);
             btnContratar = itemView.findViewById(R.id.btn_contratar);
             fotoVet = itemView.findViewById(R.id.fotoVet);
@@ -61,7 +64,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         public void onClick(View view) {
             // encontrar en que boton se dio click
             switch (view.getId()) {
-                case R.id.perfil_veterinaria:
+                case R.id.btnperfil_veterinaria:
+                    Intent in = new Intent(context, VeterinariaActivity.class);
+                    in.putExtra("nombrevet",textViewNombreVet.getText());
+                    in.putExtra("direccionVet",textViewDireccionVet.getText());
+                    in.putExtra("whatsappVet",whatsapp);
+                    in.putExtra("correoVet",correo);
+                    context.startActivity(in);
                     break;
                 case R.id.btn_localizar:
                     Intent i = new Intent(context, MapActivity.class);

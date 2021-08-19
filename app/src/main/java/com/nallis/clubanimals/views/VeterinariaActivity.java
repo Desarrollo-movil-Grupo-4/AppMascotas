@@ -34,10 +34,10 @@ public class VeterinariaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_veterinaria);
 
-        nombre_veterinaria = (TextView)findViewById(R.id.nombre_vet);
-        correo = findViewById(R.id.correo);
-        direccion = findViewById(R.id.direccion_vet);
-        telefono = findViewById(R.id.telefono_vet);
+       /* nombre_veterinaria = (TextView)findViewById(R.id.nomvet);
+        correo = findViewById(R.id.txt_correo);
+        direccion = findViewById(R.id.txtdireccion);
+        telefono = findViewById(R.id.txttelefono);
 
         db = FirebaseDatabase.getInstance().getReference();
 
@@ -64,5 +64,6 @@ public class VeterinariaActivity extends AppCompatActivity {
     public void goToContratar (View view){
         Intent intent = new Intent(this, ContratarActivityView.class);
         startActivity(intent);
+    }*/
     }
 }
