@@ -38,26 +38,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-    <ImageView
-        android:id="@+id/imagen"
-        android:layout_width="362dp"
-        android:layout_height="319dp"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="false"
-        android:scaleType="fitXY"
-        android:src="@drawable/loc"
-        app:layout_constraintBottom_toTopOf="@+id/direccion"
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="378dp"
+        android:layout_height="390dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Descservubicacion" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548"
+        tools:context=".views.MapActivity" />
 
     <TextView
         android:id="@+id/direccion"
         android:layout_width="308dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="100dp"
         android:drawableLeft="@drawable/map_marker_radius"
         android:drawablePadding="12dp"
         android:gravity="center|start"
@@ -75,8 +74,8 @@
         android:id="@+id/telefono"
         android:layout_width="163dp"
         android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/phone_in_talk"
         android:drawablePadding="10dp"
@@ -93,11 +92,11 @@
 
     <TextView
         android:id="@+id/telefono2"
-        android:layout_width="268dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="259dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp"
         android:drawableLeft="@drawable/at"
         android:drawablePadding="10dp"
         android:gravity="center|start"

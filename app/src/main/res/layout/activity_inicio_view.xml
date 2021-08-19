@@ -25,6 +25,7 @@
         android:layout_marginRight="15dp"
         android:drawableLeft="@drawable/ic_baseline_account_circle_80"
         android:gravity="center"
+        android:onClick="goToPerfil"
         android:paddingLeft="10dp"
         android:text="@string/txt_perfil"
         android:textColor="@color/black"
