@@ -46,7 +46,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             textViewDireccionVet = itemView.findViewById(R.id.textview_direccionvet);
 
            // textViewS01 = itemView.findViewById(R.id.textview_s01);
-            btnPerfil = itemView.findViewById(R.id.perfil_veterinaria);
+            btnPerfil = itemView.findViewById(R.id.btnperfil_veterinaria);
 
             btnLocalizacion = itemView.findViewById(R.id.btn_localizar);
             btnContratar = itemView.findViewById(R.id.btn_contratar);
