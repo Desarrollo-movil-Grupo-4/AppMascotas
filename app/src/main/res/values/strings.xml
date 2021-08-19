@@ -69,6 +69,11 @@
     <string name="txt_cirugia">Cirugía</string>
     <string name="txt_aseo">Baño y peluquería</string>
     <string name="txt_rayos">Rayos X</string>
+    <string name="txt_venta">Venta</string>
+    <string name="txt_vacunacion">Vacunación</string>
+    <string name="txt_laboratorio">Laboratorio</string>
+    <string name="txt_esterilizacion">Esterilización</string>
+    <string name="txt_hospitalizacion">Hospitalizacion</string>
     <string name="txt_perfil">Nombre usuario</string>
     //activity ubicacion
     <string name="txt_usuario">Cuenta Usuario</string>

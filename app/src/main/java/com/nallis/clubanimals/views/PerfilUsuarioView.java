@@ -88,6 +88,13 @@ public class PerfilUsuarioView extends AppCompatActivity {
             }
         });
 
+        etxt_contrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PerfilUsuarioView.this, RecuperarContrasenaView.class));
+                finish();
+            }
+        });
     }
 
     public void fileUpload(){

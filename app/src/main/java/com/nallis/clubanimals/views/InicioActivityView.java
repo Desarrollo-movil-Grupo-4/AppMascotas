@@ -107,6 +107,12 @@ public class InicioActivityView extends AppCompatActivity {
         infoUsuario();
         //metodo para cargar a la base de datos y la ubicacion
         localizacion();
+        tv_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToPerfil(view);
+            }
+        });
     }
 
     private void localizacion() {
