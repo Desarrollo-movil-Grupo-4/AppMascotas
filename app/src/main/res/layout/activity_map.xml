@@ -8,6 +8,14 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
+    <Button
+        android:id="@+id/contratar"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:background="@color/color_primario"
+        android:text="Contratar Servicio"
+        android:textColor="@color/white"
+        map:backgroundTint="@color/color_primario" />
 
 <fragment
     android:id="@+id/map"
