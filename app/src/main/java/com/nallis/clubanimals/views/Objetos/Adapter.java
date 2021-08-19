@@ -6,15 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.views.ContratarActivityView;
 import com.nallis.clubanimals.views.MapActivity;
+import com.nallis.clubanimals.views.VeterinariaActivity;
 
 import java.util.List;
 
@@ -27,9 +29,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         Context context;
         double latitud;
         double longitud;
+        String whatsapp;
+        String correo;
+        String foto;
         // Creacion de objetos que muestra la tarjeta
         TextView textViewNombreVet, textViewDireccionVet, textViewS01;
         Button btnPerfil, btnLocalizacion, btnContratar;
+        ImageView fotoVet;
 
         public VeterinariasHolder(@NonNull View itemView) {
             super(itemView);
@@ -38,10 +44,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             // conexion con la vista
             textViewNombreVet = itemView.findViewById(R.id.textview_nombrevet);
             textViewDireccionVet = itemView.findViewById(R.id.textview_direccionvet);
-            textViewS01 = itemView.findViewById(R.id.textview_s01);
-            btnPerfil = itemView.findViewById(R.id.perfil_veterinaria);
+
+           // textViewS01 = itemView.findViewById(R.id.textview_s01);
+            btnPerfil = itemView.findViewById(R.id.btnperfil_veterinaria);
+
             btnLocalizacion = itemView.findViewById(R.id.btn_localizar);
             btnContratar = itemView.findViewById(R.id.btn_contratar);
+            fotoVet = itemView.findViewById(R.id.fotoVet);
         }
 
         // Crear metodo que tiene los eventos de click
@@ -55,7 +64,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
         public void onClick(View view) {
             // encontrar en que boton se dio click
             switch (view.getId()) {
-                case R.id.perfil_veterinaria:
+                case R.id.btnperfil_veterinaria:
+                    Intent in = new Intent(context, VeterinariaActivity.class);
+                    in.putExtra("nombrevet",textViewNombreVet.getText());
+                    in.putExtra("direccionVet",textViewDireccionVet.getText());
+                    in.putExtra("whatsappVet",whatsapp);
+                    in.putExtra("correoVet",correo);
+                    context.startActivity(in);
                     break;
                 case R.id.btn_localizar:
                     Intent i = new Intent(context, MapActivity.class);
@@ -66,6 +81,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
                     break;
                 case R.id.btn_contratar:
                     Intent intent = new Intent(context, ContratarActivityView.class);
+                    intent.putExtra("nombrevet",textViewNombreVet.getText());
+                    intent.putExtra("direccionVet",textViewDireccionVet.getText());
+                    intent.putExtra("whatsappVet",whatsapp);
+                    intent.putExtra("correoVet",correo);
                     context.startActivity(intent);
                     break;
             }
@@ -88,11 +107,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.VeterinariasHolder>{
             Veterinaria veterinaria = veterinarias.get(position);
             holder.latitud = veterinaria.getLatitud();
             holder.longitud = veterinaria.getLongitud();
+            holder.whatsapp = veterinaria.getWhatsapp();
+            holder.correo = veterinaria.getCorreo();
+            holder.foto = veterinaria.getFoto();
             holder.textViewNombreVet.setText(veterinaria.getNombre());
             holder.textViewDireccionVet.setText(veterinaria.getDireccion());
+
             //holder.textViewS01.setText(nombreServicio);
             // colocar evento
             holder.setOnClickListeners();
+            Glide.with(holder.fotoVet)
+                    .load(holder.foto)
+                    .fitCenter()
+                    //.centerCrop()
+                    .into(holder.fotoVet);
 
         }
 

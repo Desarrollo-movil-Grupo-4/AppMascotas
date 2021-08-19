@@ -10,71 +10,96 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#673AB7"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="11dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/color_primario"
-            android:orientation="vertical">
+            android:orientation="vertical"><![CDATA[>
 
-            <!-- Media -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="194dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/fredo_y_max" />
+
+
+            ]]>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:background="@color/color_primario"
+                android:orientation="horizontal">
 
-                <!-- Title, secondary and supporting text -->
-                <TextView
-                    android:id="@+id/textview_nombrevet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Veterinaria"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="24sp" />
+                <!-- Media -->
 
-                <TextView
-                    android:id="@+id/textview_s01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/supporting_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/fotoVet"
+                    android:layout_width="148dp"
+                    android:layout_height="135dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/fredo_y_max" />
 
-                <TextView
-                    android:id="@+id/textview_direccionvet"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/secondary_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:id="@+id/textview_nombrevet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Veterinaria"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="24sp" />
+
+                    <!--    <TextView
+android:id="@+id/textview_s01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/supporting_text"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+
+                android:textSize="16sp" />
+
+                android:textSize="20sp" />  -->
+
+
+                    <TextView
+                        android:id="@+id/textview_direccionvet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/secondary_text"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
-            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
+                android:background="@color/color_primario"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/perfil_veterinaria"
+                    android:id="@+id/btnperfil_veterinaria"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,20 +112,20 @@
                     app:backgroundTint="#4CAF50" />
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
                     android:id="@+id/btn_localizar"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_baseline_location_on_24"
                     app:backgroundTint="@android:color/transparent" />
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
                     android:id="@+id/btn_contratar"
+                    style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_radius"
-                    android:padding="10dp"
+                    android:padding="8dp"
                     android:text="Contratar"
                     android:textColor="@color/white"
                     android:textStyle="bold"
@@ -108,6 +133,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
 
     </com.google.android.material.card.MaterialCardView>
 

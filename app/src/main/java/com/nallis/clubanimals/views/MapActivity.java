@@ -6,8 +6,8 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -17,11 +17,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.nallis.clubanimals.R;
 import com.nallis.clubanimals.databinding.ActivityMapBinding;
 
@@ -39,15 +34,21 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private String nombre;
     private double lat;
     private double lon;
+    TextView tv_nombreVet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //tv_nombreVet = findViewById(R.id.tv_map);
+
         nombre = getIntent().getStringExtra("nombrevet");
         lat = getIntent().getDoubleExtra("latitudVet",0);
         lon = getIntent().getDoubleExtra("longitudVet",0);
+
         localizacion();
+
+        //tv_nombreVet.setText(nombre);
 
         binding = ActivityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -79,11 +80,11 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
             LatLng veterinaria = new LatLng( lat, lon);
             mMap.addMarker(new MarkerOptions().position(veterinaria).title(nombre));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(veterinaria, 9));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(veterinaria, 16));
 
             LatLng positionUsuario = new LatLng( (double) local.get(0), (double) local.get(1));
             mMap.addMarker(new MarkerOptions().position(positionUsuario).title("Tu ubicacion"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 9));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positionUsuario, 16));
 
     }
 

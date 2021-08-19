@@ -1,259 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/fondo_app"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".views.InicioActivityView">
+
+    android:padding="1dp"
+    tools:context=".views.MainActivity">
+
 
     <TextView
         android:id="@+id/nomPerfil"
-        android:layout_width="349dp"
-        android:layout_height="49dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:drawableLeft="@drawable/cat"
-        android:gravity="center|left"
-        android:onClick="goToPerfil"
-        android:paddingLeft="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_80"
+        android:gravity="center"
+
+        android:paddingLeft="10dp"
         android:text="@string/txt_perfil"
-        android:textColor="@color/color_primario"
-        android:textSize="34sp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:drawableTint="#009688"
+        app:drawableTint="@color/fondo_app"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="60dp" />
 
-    <TextView
-        android:id="@+id/buscar"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:width="50dp"
-        android:height="50dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/ic_baseline_search_24"
-        android:gravity="left"
-        android:padding="10dp"
-        android:text="Buscar"
-        android:textSize="24sp" />
+    <ScrollView android:layout_height="550dp
+"
+        android:layout_width="match_parent">
 
-    <Button
-        android:id="@+id/btn_consulta_general"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fondo_app"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".views.InicioActivityView">
+
+            <Button
+                android:id="@+id/btn_consulta_general"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/dog"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_general"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_odontologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cat"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_odontologia"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_cirugia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cow"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_cirugia"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_ventamasco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/anima_boton"
+                android:drawableRight="@drawable/dog"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_venta"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <!--                android:onClick="goToServiciolocal"-->
+            <!--            /android:onClick="goToPerfil"/>-->
+
+            <Button
+                android:id="@+id/btn_guarderia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/horse_variant"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_guarderia"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_aseo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cat"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_aseo"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_rayos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cow"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_rayos"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_vacunacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/horse_variant"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_vacunacion"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+
+            <Button
+                android:id="@+id/btn_laboratorio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cow"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_laboratorio"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_esterilizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/cat"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_esterilizacion"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_hospitalizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border_radius"
+                android:drawableRight="@drawable/horse_variant"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:paddingRight="30dp"
+                android:text="@string/txt_hospitalizacion"
+                android:textColor="@color/white"
+                android:textColorHighlight="#F3FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/color_primario"
+                app:drawableTint="@color/white" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/dog"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:onClick="goToServiciolocal"
-        android:paddingRight="30dp"
-        android:text="@string/txt_general"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
-    <Button
-        android:id="@+id/btn_odontologia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/cat"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:paddingRight="30dp"
-        android:text="@string/txt_odontologia"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
-    <Button
-        android:id="@+id/btn_cirugia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/cow"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:paddingRight="30dp"
-        android:text="@string/txt_cirugia"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
-    <EditText
-        android:id="@+id/rayos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/horse_variant"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:onClick="goToServiciolocal"
-        android:paddingRight="30dp"
-        android:text="@string/txt_rayos"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
-    <EditText
-        android:id="@+id/banos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/dog"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:onClick="goToVeterinaria"
-        android:paddingRight="30dp"
-        android:text="@string/txt_aseo"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
-    <EditText
-        android:id="@+id/guarderia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/border_radius"
-        android:drawableRight="@drawable/cat"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:onClick="goToServiciolocal"
-        android:paddingRight="30dp"
-        android:text="@string/txt_guarderia"
-        android:textColor="@color/white"
-        android:textColorHighlight="#F3FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/color_primario"
-        app:drawableTint="@color/white" />
-
+        android:layout_height="8dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_gravity="bottom"
         android:gravity="center">
 
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:textColor="#009688"
-            android:textSize="24sp"
-            android:textStyle="bold">
+        <!-- <Button
+                                            android:id="@+id/pets"
+                                            android:layout_width="69dp"
+                                            android:layout_height="60dp"
+                                            android:onClick="goToVeterinaria"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/color_primario"
+                                            android:textIsSelectable="true"
+                                            app:backgroundTint="#A8E6F8"
+                                            app:icon="@drawable/paw"
+                                            app:iconTint="@color/color_primario" />-->
 
+        <Button
+            android:id="@+id/inicio"
+            android:layout_width="72dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/color_primario"
+            app:backgroundTint="@color/color_primario"
+            app:icon="@drawable/home_import_outline"
+            app:iconPadding="2dp"
+            app:iconTint="@color/white" />
 
-            <Button
-                android:id="@+id/inicio"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
-                android:textColor="@color/color_primario"
-                app:backgroundTint="#A8E6F8"
-                app:icon="@drawable/home_import_outline"
-                app:iconPadding="2dp"
-                app:iconTint="@color/color_primario" />
+        <Button
+            android:id="@+id/btn_deslogueo"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/color_primario"
+            android:textIsSelectable="true"
+            app:backgroundTint="@color/color_primario"
+            app:icon="@drawable/logout"
+            app:iconPadding="2dp"
+            app:iconTint="@color/white" />
 
-            <Button
-                android:id="@+id/ubicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/inicio"
-                android:layout_toRightOf="@+id/inicio"
-                android:onClick="goToLocalizacion"
-                android:textAllCaps="false"
-                android:textColor="@color/color_primario"
-                android:textIsSelectable="true"
-                app:backgroundTint="#A8E6F8"
-                app:icon="@drawable/map_marker_multiple__1_"
-                app:iconPadding="2dp"
-                app:iconTint="@color/color_primario" />
-
-            <Button
-                android:id="@+id/btn_deslogueo"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_toEndOf="@+id/pets"
-                android:layout_toRightOf="@+id/pets"
-                android:textAllCaps="false"
-                android:textColor="@color/color_primario"
-                android:textIsSelectable="true"
-                app:backgroundTint="#A8E6F8"
-                app:icon="@drawable/logout"
-                app:iconPadding="2dp"
-                app:iconTint="@color/color_primario" />
-
-            <Button
-                android:id="@+id/pets"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="9dp"
-                android:layout_toEndOf="@+id/ubicacion"
-                android:layout_toRightOf="@+id/ubicacion"
-                android:onClick="goToVeterinaria"
-                android:textAllCaps="false"
-                android:textColor="@color/color_primario"
-                android:textIsSelectable="true"
-                app:backgroundTint="#A8E6F8"
-                app:icon="@drawable/paw"
-                app:iconTint="@color/color_primario" />
-
-        </RelativeLayout>
+        <Button
+            android:id="@+id/ubicacion"
+            android:layout_width="77dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="0dp"
+            android:onClick="goToLocalizacion"
+            android:textAllCaps="false"
+            android:textColor="@color/color_primario"
+            android:textIsSelectable="true"
+            app:backgroundTint="@color/color_primario"
+            app:icon="@drawable/map_marker_multiple__1_"
+            app:iconPadding="2dp"
+            app:iconTint="@color/white" />
 
     </LinearLayout>
+
+
 </LinearLayout>
+
+
+
+
+
+

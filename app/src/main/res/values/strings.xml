@@ -38,7 +38,7 @@
     <string name="mascota_text">Tipo mascota y nombre</string>
     <string name="action_1">Finalizar transacción</string>
     <string name="action_2">Cerrar</string>
-    <string name="tv_titulo_confirmacion">Enhorabuena, Nombre!</string>
+    <string name="tv_titulo_confirmacion">Enhorabuena!</string>
     <string name="tv_mensaje_confirmacion">Su solicitud ha sido procesada con éxito</string>
     //string de contratar
     <string name="text_nom_vet">Nombre de la veterinaria</string>
@@ -69,6 +69,11 @@
     <string name="txt_cirugia">Cirugía</string>
     <string name="txt_aseo">Baño y peluquería</string>
     <string name="txt_rayos">Rayos X</string>
+    <string name="txt_venta">Venta</string>
+    <string name="txt_vacunacion">Vacunación</string>
+    <string name="txt_laboratorio">Laboratorio</string>
+    <string name="txt_esterilizacion">Esterilización</string>
+    <string name="txt_hospitalizacion">Hospitalizacion</string>
     <string name="txt_perfil">Nombre usuario</string>
     //activity ubicacion
     <string name="txt_usuario">Cuenta Usuario</string>

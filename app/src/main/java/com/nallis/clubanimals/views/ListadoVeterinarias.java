@@ -1,6 +1,7 @@
 package com.nallis.clubanimals.views;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +26,18 @@ public class ListadoVeterinarias extends AppCompatActivity {
     List<Veterinaria> veterinarias;
     Adapter adapter;
     InicioActivityView inicio;
+    TextView tv_servicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_veterinarias);
 
+        tv_servicio = findViewById(R.id.textView2);
+
+        String nombreServicio = getIntent().getStringExtra("nombreServicio");
+
+        tv_servicio.setText(nombreServicio);
         // conexion parte logica y grafica
         rv=(RecyclerView) findViewById(R.id.recycler);
 

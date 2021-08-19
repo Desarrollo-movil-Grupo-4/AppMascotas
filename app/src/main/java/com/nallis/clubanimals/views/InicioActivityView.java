@@ -88,25 +88,31 @@ public class InicioActivityView extends AppCompatActivity {
         btn_consulta_general.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s01");
+                goToListado(view, "s01", "Consulta General");
             }
         });
         btn_odontologia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s02");
+                goToListado(view, "s02", "Odontología");
             }
         });
         btn_cirugia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToListado(view, "s03");
+                goToListado(view, "s03", "Cirugía");
             }
         });
 
         infoUsuario();
         //metodo para cargar a la base de datos y la ubicacion
         localizacion();
+        tv_result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToPerfil(view);
+            }
+        });
     }
 
     private void localizacion() {
@@ -149,7 +155,7 @@ public class InicioActivityView extends AppCompatActivity {
 
     }
 
-    private void infoUsuario(){
+    public void infoUsuario(){
 
         String id = auth.getCurrentUser().getUid();
         db.child("Users").child(id).addValueEventListener(new ValueEventListener() {
@@ -160,7 +166,7 @@ public class InicioActivityView extends AppCompatActivity {
                     //String email = snapshot.child("name").getValue().toString();
 
                     tv_result.setText(name);
-                }
+                };
             }
 
             @Override
@@ -170,10 +176,13 @@ public class InicioActivityView extends AppCompatActivity {
         });
     }
 
-    public void goToListado(View view, String idServicio){
+
+
+    public void goToListado(View view, String idServicio, String Servicio){
         //Intent intent = new Intent(this, VeterinariaActivity.class);
         Intent intent = new Intent(this, ListadoVeterinarias.class);
         intent.putExtra("servicio", idServicio);
+        intent.putExtra("nombreServicio", Servicio);
         startActivity(intent);
     }
 
